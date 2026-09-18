@@ -37,34 +37,34 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Platform</h4>
             <ul className="space-y-4 text-sm text-paper/60">
-              <li><Link to="/product" className="hover:text-white transition-colors">Communication</Link></li>
-              <li><Link to="/product" className="hover:text-white transition-colors">HR Operations</Link></li>
-              <li><Link to="/product" className="hover:text-white transition-colors">Earned Wage Access</Link></li>
-              <li><Link to="/product" className="hover:text-white transition-colors">Integrations</Link></li>
-              <li><Link to="/product" className="hover:text-white transition-colors">Security</Link></li>
+              <li><a href="https://www.jemhr.com/connect/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Connect</a></li>
+              <li><a href="https://www.jemhr.com/manage/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Manage</a></li>
+              <li><a href="https://www.jemhr.com/reward/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Reward</a></li>
+              <li><a href="https://www.jemhr.com/solutions/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Industries</a></li>
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Stories */}
           <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
+            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Stories</h4>
             <ul className="space-y-4 text-sm text-paper/60">
-              <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/customers" className="hover:text-white transition-colors">Customers</Link></li>
-              <li><Link to="/careers" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link to="/insights" className="hover:text-white transition-colors">Blog</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <li><a href="https://www.jemhr.com/insights/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">News</a></li>
+              <li><a href="https://www.jemhr.com/customers/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Case studies</a></li>
+              <li><a href="https://www.jemhr.com/testimonials/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Testimonials</a></li>
+              <li><a href="https://www.jemhr.com/deskless-pulse/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Deskless Pulse</a></li>
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* General */}
           <div>
-            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Legal</h4>
+            <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">General</h4>
             <ul className="space-y-4 text-sm text-paper/60">
-              <li><Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link to="/paia" className="hover:text-white transition-colors">PAIA Manual</Link></li>
-              <li><Link to="/security-policy" className="hover:text-white transition-colors">Security Policy</Link></li>
+              <li><a href="https://www.jemhr.com/about/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">About Jem</a></li>
+              <li><a href="https://www.jemhr.com/careers/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Careers</a></li>
+              <li><a href="https://www.jemhr.com/contact/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="https://www.jemhr.com/jem-labs/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Jem Labs</a></li>
+              <li><a href="https://www.jemhr.com/security/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Security</a></li>
+              <li><a href="https://www.jemhr.com/faqs/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">FAQs</a></li>
             </ul>
           </div>
 
@@ -78,6 +78,18 @@ export default function Footer() {
           <p className="text-paper/40 text-xs flex items-center gap-1">
             Designed with precision <Zap className="w-3 h-3 text-coral" />
           </p>
+        </div>
+
+        {/* Attribution */}
+        <div className="mt-4 text-center">
+          
+           <a href="https://www.seo-growup.com/?utm_source=jem-github&utm_medium=referral&utm_campaign=jem-case-study"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-paper/30 text-[11px] hover:text-paper/50 transition-colors"
+          >
+            Concept redesign by GrowUp · Not affiliated with Jem HR (Pty) Ltd.
+          </a>
         </div>
       </div>
     </footer>

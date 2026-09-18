@@ -759,147 +759,6 @@ const ChatMockup = () => {
 };
 
 
-
-const PremiumChatMockup = () => (
-  <div className="relative mx-auto w-full max-w-[400px]">
-    {/* Phone frame */}
-    <div className="relative">
-      <div
-        className="relative rounded-[2.6rem] p-[1.5px]"
-        style={{
-          background: 'rgba(255,255,255,0.14)',
-        }}
-      >
-        <div className="rounded-[2.55rem] overflow-hidden p-[8px]" style={{ background: '#051d2e' }}>
-          <div className="relative rounded-[2.15rem] overflow-hidden" style={{ background: '#051d2e' }}>
-
-            {/* Dynamic island */}
-            <div className="absolute top-[12px] left-1/2 -translate-x-1/2 w-[86px] h-[22px] bg-black rounded-full z-30" />
-
-            {/* Status bar */}
-            <div className="relative flex items-center justify-between px-8 pt-4 pb-1 z-20">
-              <span className="text-[13px] font-semibold text-white tabular-nums">9:41</span>
-              <div className="flex items-center gap-1.5">
-                <svg width="17" height="11" viewBox="0 0 17 11" fill="none"><path d="M1 8L1 10M4.5 6L4.5 10M8 3L8 10M11.5 1L11.5 10" stroke="white" strokeWidth="1.5" strokeLinecap="round"/></svg>
-                <svg width="15" height="11" viewBox="0 0 15 11" fill="none"><path d="M1 5C3 2 6 1 7.5 1C9 1 12 2 14 5M3.2 7.3C4.5 5.8 6 5.2 7.5 5.2C9 5.2 10.5 5.8 11.8 7.3M5.6 9.5C6.3 8.7 7 8.4 7.5 8.4C8 8.4 8.7 8.7 9.4 9.5" stroke="white" strokeWidth="1.4" strokeLinecap="round"/></svg>
-                <svg width="24" height="12" viewBox="0 0 24 12" fill="none"><rect x="1" y="1" width="19" height="10" rx="2.5" stroke="white" strokeOpacity="0.5" strokeWidth="1"/><rect x="2.5" y="2.5" width="14" height="7" rx="1.5" fill="white"/><rect x="21" y="4" width="1.8" height="4" rx="0.8" fill="white" fillOpacity="0.5"/></svg>
-              </div>
-            </div>
-
-            {/* WhatsApp header */}
-            <div className="relative flex items-center gap-3 px-4 py-3 z-20" style={{ background: '#051d2e', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-              <ChevronRight className="w-5 h-5 text-white/70 rotate-180" strokeWidth={2} />
-              <div className="relative">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-coral to-coral-dark flex items-center justify-center text-white font-serif italic text-[15px]">j</div>
-                <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 flex items-center justify-center overflow-hidden bg-white" style={{ borderColor: '#051d2e' }}>
-                  <img
-                    src="https://img.logo.dev/whatsapp.com?token=pk_KnI5jJk1QmKibGPEWPdFjw&size=32&format=png"
-                    alt="WhatsApp"
-                    className="w-full h-full object-cover"
-                  />
-                </span>
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-1">
-                  <p className="text-[14.5px] font-semibold text-white leading-tight">Jem HR</p>
-                  <ShieldCheck className="w-3 h-3 text-[#8696a0]" />
-                </div>
-                <p className="text-[11px] text-[#8696a0] leading-tight">Verified Business Account</p>
-              </div>
-              <div className="flex items-center gap-4 text-white/60">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              </div>
-            </div>
-
-            {/* Chat body */}
-            <div className="relative px-3 py-4 space-y-2.5 min-h-[440px]" style={{ background: '#051d2e' }}>
-              <div className="relative flex justify-center mb-3">
-                <span className="text-[11px] font-medium text-[#8696a0] bg-[#182229] px-3 py-1 rounded-lg">Today</span>
-              </div>
-
-              {/* Payslip message */}
-              <div className="relative max-w-[82%] animate-reveal-up" style={{ animationDelay: '100ms' }}>
-                <div className="rounded-lg rounded-tl-none px-3 py-2" style={{ background: '#0c2a3f' }}>
-                  <p className="text-[13.5px] text-white/95 leading-snug">Hi Thabo 👋 Your <span className="font-semibold">October payslip</span> is ready.</p>
-                  <div className="mt-2.5 flex items-center gap-2.5 rounded-lg px-2.5 py-2" style={{ background: 'rgba(255,255,255,0.04)' }}>
-                    <div className="w-8 h-8 rounded bg-[#E05C4A]/20 flex items-center justify-center shrink-0">
-                      <FileText className="w-4 h-4 text-coral" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-[12px] font-medium text-white/90 truncate">Oct_Payslip.pdf</p>
-                      <p className="text-[10px] text-[#8696a0]">2.4 MB</p>
-                    </div>
-                    <ArrowDownToLine className="w-3.5 h-3.5 text-[#8696a0]" />
-                  </div>
-                  <p className="text-right text-[10px] text-[#8696a0] mt-1">9:41</p>
-                </div>
-              </div>
-
-              {/* Employee reply */}
-              <div className="relative flex justify-end animate-reveal-up" style={{ animationDelay: '200ms' }}>
-                <div className="max-w-[70%] rounded-lg rounded-tr-none px-3 py-2" style={{ background: '#005c4b' }}>
-                  <p className="text-[13.5px] text-white leading-snug">Got it, thanks! 🙏</p>
-                  <p className="text-right text-[10px] text-white/50 mt-0.5 flex items-center justify-end gap-1">
-                    9:42
-                    <svg width="14" height="10" viewBox="0 0 16 11" fill="none"><path d="M1 5.5L4.5 9L11 1.5M6 5.5L9.5 9L16 1.5" stroke="#53bdeb" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </p>
-                </div>
-              </div>
-
-              {/* EWA message */}
-              <div className="relative max-w-[85%] animate-reveal-up" style={{ animationDelay: '300ms' }}>
-                <div className="rounded-lg rounded-tl-none overflow-hidden" style={{ background: '#0c2a3f' }}>
-                  <div className="px-3 pt-3">
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <Wallet className="w-3.5 h-3.5 text-[#25D366]" />
-                      <span className="text-[10.5px] font-bold uppercase tracking-wider text-[#25D366]">Earned Wage Access</span>
-                    </div>
-                    <p className="text-[13.5px] text-white/95 leading-snug pb-3">
-                      <span className="font-bold text-[17px]">R 850.00</span> available to withdraw.
-                    </p>
-                  </div>
-                  <button className="w-full py-2.5 text-[12.5px] font-semibold text-white flex items-center justify-center gap-1.5" style={{ background: '#00a884' }}>
-                    Withdraw to bank
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                  <p className="text-right text-[10px] text-[#8696a0] px-3 py-1.5">9:45</p>
-                </div>
-              </div>
-
-              {/* Typing indicator */}
-              <div className="relative flex items-center gap-1.5 pl-1 pt-1 animate-reveal-up" style={{ animationDelay: '420ms' }}>
-                <div className="rounded-full px-3.5 py-2.5 flex items-center gap-1" style={{ background: '#0c2a3f' }}>
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8696a0] animate-pulse-soft" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8696a0] animate-pulse-soft" style={{ animationDelay: '150ms' }} />
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#8696a0] animate-pulse-soft" style={{ animationDelay: '300ms' }} />
-                </div>
-              </div>
-            </div>
-
-            {/* Footer input */}
-            <div className="relative flex items-center gap-2.5 px-3 py-2.5 z-20" style={{ background: '#03141f' }}>
-              <div className="flex-1 rounded-full px-4 py-2.5 flex items-center gap-2" style={{ background: '#0c2a3f' }}>
-                <span className="text-[13px] text-[#8696a0]">Message</span>
-              </div>
-              <div className="w-9 h-9 rounded-full flex items-center justify-center" style={{ background: '#00a884' }}>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
-              </div>
-            </div>
-
-            {/* Home indicator */}
-            <div className="relative flex justify-center py-2" style={{ background: '#03141f' }}>
-              <div className="w-32 h-1 rounded-full bg-white/30" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-);
-
-
 const Hero = () => (
   <section
     id="hero"
@@ -969,9 +828,21 @@ const Hero = () => (
 </div>
         </div>
 
-      {/* RIGHT — premium phone mockup */}
+     {/* RIGHT — hero image */}
 <div className="reveal reveal-delay-2 flex justify-center lg:justify-end items-center">
-  <PremiumChatMockup />
+  <div className="relative w-full max-w-[640px] lg:max-w-none">
+    <img
+      src="/images/jemherogit.png"
+      alt="Jem platform — enterprise workforce management"
+      className="w-full h-auto block object-contain"
+         style={{
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%)',
+        maskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%)',
+      }}
+      loading="eager"
+      draggable={false}
+    />
+  </div>
 </div>
       </div>
 
