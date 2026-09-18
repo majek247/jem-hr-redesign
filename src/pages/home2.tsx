@@ -218,11 +218,12 @@ const siteData = {
         { value: '3x', label: 'Faster policy rollout' },
         { value: '81%', label: 'Pulse survey response' }
       ],
-      points: [
-        'Survey the frontline instantly with >80% response rates',
-        'Digitize onboarding to get new hires productive faster',
-        'Provide a modern employee experience without app fatigue',
-        'Identify flight-risk locations through engagement metrics'
+      testimonials: [
+        {
+          quote: "10,000+ colleagues across hundreds of sites — most never had a company email. Weeks into launch we had 90% registered. For a People team responsible for this many people, that visibility is something we've never had before.",
+          name: 'Lerato Ndoro',
+          role: 'CPO, Servest'
+        }
       ]
     },
     {
@@ -236,11 +237,12 @@ const siteData = {
         { value: 'Zero', label: 'Impact on working capital' },
         { value: 'Month 2', label: 'Typical break-even' }
       ],
-      points: [
-        'Eliminate the cost of printing, distributing, and re-issuing payslips',
-        'Reduce payroll errors with automated leave and shift tracking',
-        'Consolidate disjointed SMS and point-solution budgets into one platform',
-        'Free up HR headcount to focus on strategic initiatives over admin'
+      testimonials: [
+        {
+          quote: "I love Jem. We went from 100+ payslip queries every month to less than 2. The convenience is just great and our employees love it.",
+          name: 'Nwabisa Mtonana',
+          role: 'Payroll Administrator, Ceramic Industries'
+        }
       ]
     },
     {
@@ -254,11 +256,12 @@ const siteData = {
         { value: '< 3 min', label: 'Critical alert read time' },
         { value: '40%', label: 'More shifts filled internally' }
       ],
-      points: [
-        'Fill open shifts instantly with targeted broadcasts',
-        'Ensure critical health & safety protocols are read and acknowledged',
-        'Standardize operational training through micro-learning via chat',
-        'Reduce downtime caused by miscommunication or outdated schedules'
+      testimonials: [
+        {
+          quote: "Our cleaners work across client sites so communicating was always a challenge. Jem allows us to communicate directly through WhatsApp — we've achieved over 90% registration, which we honestly did not expect so early.",
+          name: 'Debbie Stanbury',
+          role: 'CEO, Kusasa Cleaning'
+        }
       ]
     },
     {
@@ -272,11 +275,12 @@ const siteData = {
         { value: 'ISO 27001', label: 'Certified infrastructure' },
         { value: 'POPIA', label: '& GDPR compliant' }
       ],
-      points: [
-        'Plug-and-play integrations with SAP, Sage, VIP, and more',
-        'Bank-grade encryption and fully POPIA/GDPR compliant',
-        'Role-based access controls and comprehensive audit logs',
-        'Zero burden on IT helpdesk for password resets or app issues'
+      testimonials: [
+        {
+          quote: "They didn't just hand us technology; they guided us through concept, implementation, adoption and ongoing support. Responsive, solution-driven, and excellent value — I'd confidently recommend Jem HR to any organisation looking to modernise.",
+          name: 'Marius Erasmus',
+          role: 'CTO, Auto & Truck Tyres'
+        }
       ]
     }
   ],
@@ -303,19 +307,19 @@ const siteData = {
     }
   ],
   caseStudy: {
-    headline: 'How a top-tier retail giant digitized 15,000 store staff in under 3 weeks.',
-    sector: 'Enterprise Retail • 15,000+ Employees',
-    body: 'Faced with soaring printing costs and a complete inability to communicate urgent operational changes to floor staff, this national retailer deployed Jem. Within the first month, they entirely eliminated printed payslips, saw an 85% adoption rate without mandatory enforcement, and utilized the broadcast feature to fill 40% more open shifts internally.',
+    headline: 'From printed payslips to a fully engaged workforce.',
+    sector: 'Deskless Retail & FMCG • 5,500+ Merchandisers',
+    body: "Meridian's merchandisers were spread across South Africa — payslips printed and couriered at huge cost, with only 600 of 5,500 employees holding any digital access. Starting with payslips, Meridian rolled out every product: Earned Wage Access, Jem Mobile, Savings, Comms, and an EAP, reaching a workforce that had never felt heard.",
     metrics: [
-      { value: '85%', label: 'Voluntary Adoption' },
-      { value: 'R3M', label: 'Admin Savings/Yr' },
-      { value: '100%', label: 'ROI in Month 2' }
+      { value: '98%', label: 'Employee adoption' },
+      { value: '10%', label: 'Jem Mobile uptake, 90 days' },
+      { value: 'R300', label: 'Saved / employee / month' }
     ]
   },
   testimonial: {
-    quote: "Jem completely transformed how we interact with our store associates. It moved us from a fragmented, paper-heavy operation to a modern, agile organization overnight. The fact that it requires zero training is the real magic.",
-    name: "Sarah Jenkins",
-    role: "CHRO, Leading Retail Group"
+    quote: "It's not just 5,500 people, it's 50,000 people. Jem has transformed the lives of not just Meridian employees, but their extended families too.",
+    name: "Karen Hammond",
+    role: "Group Head of People, Meridian Group"
   },
   securityBadges: [
     'ISO 27001 Certified Infrastructure',
@@ -599,141 +603,106 @@ const Badge = ({ children, className = '' }) => (
   </div>
 );
 
-
 const ChatMockup = () => {
   return (
-    <div className="relative mx-auto w-full max-w-[340px] md:max-w-md perspective-1000">
-      {/* Decorative ambient background glows */}
-      <div className="absolute -left-12 -top-12 h-64 w-64 rounded-full bg-palm/20 blur-[60px] animate-pulse-soft" />
-      <div className="absolute -bottom-16 -right-12 h-72 w-72 rounded-full bg-coral/20 blur-[60px] animate-pulse-soft" style={{ animationDelay: '2s' }} />
+    <div className="relative mx-auto w-full max-w-[380px]">
+      {/* Soft ambient halo — single, not two competing */}
+      <div className="absolute inset-0 -m-16 rounded-[3rem] bg-coral/[0.06] blur-[100px] pointer-events-none" />
 
-      {/* Main Phone/Chat Container */}
-      <div className="relative rounded-[2.5rem] border-[6px] border-white/40 bg-white/60 p-2 shadow-2xl backdrop-blur-xl animate-float">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-white/40 rounded-b-2xl blur-[1px]"></div>
-        
-        <div className="relative h-[600px] w-full overflow-hidden rounded-[2rem] bg-sand/50 shadow-inner flex flex-col">
-          
-          {/* Chat Header */}
-          <div className="flex items-center gap-3 bg-white/95 px-5 py-4 shadow-sm backdrop-blur-md border-b border-ink/5 z-10">
-            <button className="text-ink/40 hover:text-ink transition-colors">
-              <ChevronDown className="w-5 h-5 rotate-90" />
-            </button>
-            <div className="relative">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-coral text-lg font-serif font-bold italic text-white shadow-sm">
-                j
-              </span>
-              <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-green-500"></span>
-            </div>
-            <div className="flex-1">
-              <p className="text-[15px] font-semibold text-ink leading-tight">Jem HR</p>
-              <p className="text-[11px] font-medium text-ink/50">Verified Business Account</p>
-            </div>
+      {/* Phone frame — single hairline, no glassmorphism, no float */}
+      <div className="relative rounded-[2rem] bg-white border border-ink/[0.08] shadow-[0_24px_60px_-20px_rgba(15,23,42,0.18)] overflow-hidden">
+        {/* Status bar */}
+        <div className="flex items-center justify-between px-6 pt-5 pb-3">
+          <span className="text-[10px] font-medium text-ink/40 tabular-nums">9:41</span>
+          <div className="flex items-center gap-1.5">
+            <span className="w-3.5 h-2 rounded-sm border border-ink/25" />
+            <span className="w-1.5 h-1 rounded-sm bg-ink/40" />
           </div>
+        </div>
 
-          {/* Chat Body - Scrollable Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-5 hide-scrollbar bg-[#E5DCD5]/10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-            
-            {/* Date Indicator */}
-            <div className="flex justify-center my-2">
-              <span className="bg-white/80 text-[10px] uppercase tracking-wider font-semibold px-3 py-1 rounded-full text-ink/50 shadow-sm">Today</span>
-            </div>
-
-            {/* Message 1: Payslip (From Jem) */}
-            <div className="flex flex-col gap-1 items-start animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
-              <div className="glass-chat-bubble max-w-[85%] rounded-2xl rounded-tl-sm px-4 py-3 text-[14px] text-ink shadow-sm relative group">
-                <p className="font-medium text-ink mb-1">Hi Thabo 👋</p>
-                <p className="text-ink/80 leading-snug">Your payslip for <strong className="text-ink">October 2026</strong> is now available.</p>
-                
-                <div className="mt-3 rounded-xl border border-ink/5 bg-sand/50 p-3 flex items-center gap-3 cursor-pointer hover:bg-sand transition-colors">
-                  <div className="bg-palm/10 p-2 rounded-lg">
-                    <FileText className="w-5 h-5 text-palm" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[13px] font-semibold">Oct_Payslip.pdf</p>
-                    <p className="text-[11px] text-ink/50">1.2 MB</p>
-                  </div>
-                  <ArrowDownToLine className="w-4 h-4 text-ink/40" />
-                </div>
-                <span className="absolute bottom-1.5 right-2 text-[9px] text-ink/30">09:41</span>
-              </div>
-            </div>
-
-            {/* Message 2: Employee Reply */}
-            <div className="flex flex-col gap-1 items-end animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
-              <div className="max-w-[75%] rounded-2xl rounded-tr-sm bg-[#D9FDD3] px-4 py-2.5 text-[14px] text-ink shadow-sm relative">
-                <p>Got it, thanks! 🙏</p>
-                <div className="flex items-center gap-1 mt-1 justify-end">
-                  <span className="text-[9px] text-ink/40">09:45</span>
-                  <CheckCircle2 className="w-3 h-3 text-blue-500" />
-                </div>
-              </div>
-            </div>
-
-            {/* Message 3: Shift Feedback (From Jem) */}
-            <div className="flex flex-col gap-1 items-start animate-fade-in" style={{ animationDelay: '2s', animationFillMode: 'both' }}>
-              <div className="glass-chat-bubble max-w-[85%] rounded-2xl rounded-tl-sm px-4 py-3 text-[14px] text-ink shadow-sm relative">
-                <p className="font-medium text-coral flex items-center gap-1.5 mb-1"><Clock className="w-4 h-4"/> Shift Completed</p>
-                <p className="text-ink/80 leading-snug">You just clocked out from the <strong>Sandton Branch</strong>. How was your shift today?</p>
-                
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <button className="flex-1 bg-white border border-ink/10 rounded-lg py-2 text-[13px] font-medium hover:bg-palm/5 hover:border-palm/30 hover:text-palm transition-colors">👍 Great</button>
-                  <button className="flex-1 bg-white border border-ink/10 rounded-lg py-2 text-[13px] font-medium hover:bg-yellow-500/5 hover:border-yellow-500/30 hover:text-yellow-600 transition-colors">😐 Okay</button>
-                  <button className="flex-1 bg-white border border-ink/10 rounded-lg py-2 text-[13px] font-medium hover:bg-coral/5 hover:border-coral/30 hover:text-coral transition-colors">👎 Tough</button>
-                </div>
-                <span className="absolute bottom-1.5 right-2 text-[9px] text-ink/30">14:30</span>
-              </div>
-            </div>
-
-            {/* Message 4: Financial Wellness (EWA) */}
-            <div className="flex flex-col gap-1 items-start animate-fade-in" style={{ animationDelay: '3.5s', animationFillMode: 'both' }}>
-              <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-palm/20 bg-gradient-to-br from-palm/10 to-palm/5 px-4 py-3 text-[14px] text-ink shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-palm/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
-                <p className="font-medium text-palm flex items-center gap-1.5 mb-1"><Wallet className="w-4 h-4"/> Earned Wage Access</p>
-                <p className="text-ink/80 leading-snug">You have <strong className="text-ink text-[15px]">R 850.00</strong> in available earned wages.</p>
-                
-                <button className="mt-3 w-full bg-palm text-white rounded-xl py-2.5 text-[13px] font-semibold flex justify-center items-center gap-2 hover:bg-palm/90 transition-colors shadow-md">
-                  Withdraw to Bank <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-                <span className="absolute bottom-1.5 right-2 text-[9px] text-palm/50">14:31</span>
-              </div>
-            </div>
-
+        {/* Chat header */}
+        <div className="flex items-center gap-3 px-5 py-4 border-b border-ink/[0.06]">
+          <div className="relative">
+            <span className="grid h-10 w-10 place-items-center rounded-full bg-coral text-white font-serif text-base italic">
+              j
+            </span>
+            <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-white bg-green-500" />
           </div>
+          <div className="flex-1">
+            <p className="text-[14px] font-semibold text-ink leading-tight">Jem HR</p>
+            <p className="text-[11px] text-ink/45">Verified Business</p>
+          </div>
+        </div>
 
-          {/* Chat Footer */}
-          <div className="bg-white/95 px-4 py-3 border-t border-ink/5 backdrop-blur-md">
-            <div className="bg-sand rounded-full px-4 py-2.5 flex items-center gap-3">
-              <span className="text-ink/40 text-[14px] flex-1">Type a message...</span>
-              <div className="w-7 h-7 rounded-full bg-coral/10 flex items-center justify-center cursor-pointer">
-                <MessageSquare className="w-3.5 h-3.5 text-coral" />
+        {/* Messages — three only, calm, no timestamps floating */}
+        <div className="px-5 py-6 space-y-4 bg-sand/30">
+          {/* Payslip */}
+          <div className="max-w-[85%]">
+            <div className="rounded-2xl rounded-tl-md bg-white border border-ink/[0.06] px-4 py-3 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+              <p className="text-[13.5px] text-ink leading-snug">
+                Hi Thabo 👋 Your <span className="font-medium">October payslip</span> is available.
+              </p>
+              <div className="mt-3 flex items-center gap-2.5 rounded-xl bg-sand/60 px-3 py-2.5">
+                <FileText className="w-4 h-4 text-palm shrink-0" strokeWidth={1.75} />
+                <span className="text-[12px] font-medium text-ink/80 truncate flex-1">Oct_Payslip.pdf</span>
+                <ArrowDownToLine className="w-3.5 h-3.5 text-ink/40" />
               </div>
             </div>
           </div>
 
+          {/* Employee reply */}
+          <div className="flex justify-end">
+            <div className="max-w-[70%] rounded-2xl rounded-tr-md bg-[#D9FDD3] px-4 py-2.5">
+              <p className="text-[13.5px] text-ink leading-snug">Got it, thanks! 🙏</p>
+            </div>
+          </div>
+
+          {/* EWA */}
+          <div className="max-w-[88%]">
+            <div className="rounded-2xl rounded-tl-md bg-white border border-ink/[0.06] px-4 py-3 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+              <div className="flex items-center gap-1.5 mb-1.5">
+                <Wallet className="w-3.5 h-3.5 text-palm" strokeWidth={1.75} />
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-palm">
+                  Earned Wage Access
+                </span>
+              </div>
+              <p className="text-[13.5px] text-ink leading-snug">
+                <span className="font-semibold text-ink">R 850.00</span> available to withdraw.
+              </p>
+              <button className="mt-3 w-full rounded-xl bg-palm text-white text-[12.5px] font-semibold py-2.5 flex items-center justify-center gap-1.5">
+                Withdraw to bank
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer input */}
+        <div className="px-5 py-4 border-t border-ink/[0.06]">
+          <div className="rounded-full bg-sand px-4 py-2.5 flex items-center gap-3">
+            <span className="text-[13px] text-ink/40 flex-1">Type a message…</span>
+            <MessageSquare className="w-3.5 h-3.5 text-coral" strokeWidth={2} />
+          </div>
         </div>
       </div>
-      
-      {/* Floating UI Elements for depth */}
-      <div className="absolute -right-8 top-32 glass-panel p-3 rounded-2xl shadow-xl animate-float-delayed z-20 flex items-center gap-3">
-        <div className="bg-green-100 p-2 rounded-full text-green-600"><Check className="w-4 h-4"/></div>
-        <div>
-          <p className="text-[11px] font-bold text-ink">98% Read Rate</p>
-          <p className="text-[9px] text-ink/60">Across organization</p>
+
+      {/* ONE floating proof card — bottom-right, quiet */}
+      <div className="absolute -bottom-6 -right-6 md:-right-10 hidden sm:flex items-center gap-3 rounded-2xl bg-white border border-ink/[0.08] shadow-[0_12px_32px_-12px_rgba(15,23,42,0.18)] px-4 py-3">
+        <div className="w-8 h-8 rounded-full bg-palm/10 flex items-center justify-center">
+          <Check className="w-4 h-4 text-palm" strokeWidth={2.5} />
         </div>
-      </div>
-      
-      <div className="absolute -left-6 bottom-40 glass-panel p-3 rounded-2xl shadow-xl animate-float-fast z-20 flex items-center gap-3 border-l-4 border-l-palm">
         <div>
-          <p className="text-[11px] font-bold text-ink">Zero API Costs</p>
-          <p className="text-[9px] text-ink/60">Direct payroll integration</p>
+          <p className="text-[12px] font-semibold text-ink leading-tight">98% read rate</p>
+          <p className="text-[10px] text-ink/45 leading-tight mt-0.5">across 250k workers</p>
         </div>
       </div>
     </div>
   );
 };
 
+
 const Hero = () => (
-  <Section className="pt-16 md:pt-24 pb-16 lg:pb-32 overflow-hidden relative" id="platform">
+  <Section className="pt-16 md:pt-24 pb-16 lg:pb-32 overflow-hidden relative">
     {/* Background Grid */}
     <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
     
@@ -802,8 +771,8 @@ const ExecReasons = () => {
   const visual = audienceVisuals[activeTab];
 
   return (
-    <Section className="bg-white relative" id="solutions">
-      <div className="relative z-10">
+    <Section className="bg-white relative scroll-mt-24" id="who-we-serve" bleed>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section header */}
         <div className="reveal max-w-3xl mb-14 md:mb-16 -mt-14">
           <p className="text-[12px] font-bold uppercase tracking-[0.18em] mb-4" style={{ color: '#FF5A5F' }}>
@@ -899,17 +868,33 @@ const ExecReasons = () => {
                   ))}
                 </div>
 
-                {/* Bullet points */}
-                <ul className="mt-8 space-y-3">
-                  {current.points.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-[14px] text-ink/75 leading-snug">
-                      <span className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full bg-palm/10 flex items-center justify-center">
-                        <Check className="w-2.5 h-2.5 text-palm" strokeWidth={3} />
-                      </span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Testimonials — real voices, per exec seat */}
+                <div className="mt-10 pt-8 border-t border-ink/[0.08]">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink/40 mb-6">
+                    In their words
+                  </p>
+
+                  <div className="space-y-7">
+                    {current.testimonials.map((t, idx) => (
+                      <figure key={idx} className="relative pl-5 border-l border-ink/[0.10]">
+                        <blockquote className="font-serif italic text-[15px] md:text-[16px] text-ink/85 leading-[1.55] mb-3 text-balance">
+                          "{t.quote}"
+                        </blockquote>
+                        <figcaption className="flex items-center gap-3">
+                          <span className="w-6 h-px bg-ink/25" />
+                          <div>
+                            <p className="text-[12.5px] font-semibold text-ink leading-tight">
+                              {t.name}
+                            </p>
+                            <p className="text-[11px] text-ink/50 leading-tight mt-0.5">
+                              {t.role}
+                            </p>
+                          </div>
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* RIGHT — Live product preview */}
@@ -1082,7 +1067,8 @@ const PillarsSection = () => {
 
   return (
     <section 
-      className="relative py-24 md:py-32" 
+      id="product"
+      className="relative py-24 md:py-32 scroll-mt-24" 
       style={{ backgroundColor: '#051d2e' }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -1202,8 +1188,8 @@ const PillarsSection = () => {
 
 
 const IntegrationSteps = () => (
-  <Section className="bg-white">
-    <div className="max-w-7xl mx-auto">
+  <Section className="bg-white" bleed>
+    <div className="max-w-7xl mx-auto px-6 md:px-12">
 
       {/* Editorial header — two columns so the eye travels horizontally */}
       <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-24 items-end mb-20 md:mb-28">
@@ -1273,189 +1259,220 @@ const IntegrationSteps = () => (
     </div>
   </Section>
 );
-
 const SocialProof = () => (
-  <Section className="bg-mist p-0" bleed id="customers">
-    <div className="grid lg:grid-cols-2 min-h-[600px]">
-      
-      {/* Testimonial Side (Light) */}
-      <div className="px-8 py-20 lg:p-24 flex flex-col justify-center relative overflow-hidden reveal">
-        <div className="absolute top-12 left-12 text-ink/5 font-serif text-9xl leading-none">"</div>
-        <div className="relative z-10">
-          <Badge className="bg-white text-ink border-ink/10 mb-8">Client Voice</Badge>
-          <p className="font-serif text-2xl md:text-3xl lg:text-4xl italic text-ink leading-relaxed mb-10 text-balance">
-            "{siteData.testimonial.quote}"
-          </p>
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-ink rounded-full flex items-center justify-center text-white font-bold text-lg">
+  <section id="customers" className="relative py-24 md:py-32" style={{ backgroundColor: '#051d2e' }}>
+    {/* ambient glow, consistent with PillarsSection */}
+    <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-coral/[0.06] blur-[100px] rounded-full pointer-events-none" />
+
+    <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+
+      {/* Section header — same treatment as "The Platform Suite" */}
+      <div className="reveal max-w-3xl mb-20 md:mb-28">
+        <div className="inline-flex items-center gap-3 mb-6">
+          <span className="w-8 h-px bg-coral" />
+          <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-coral">Client Stories</span>
+        </div>
+        <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight text-white leading-[1.05] text-balance">
+          Proof, not promises. <br className="hidden md:block" />
+          <span className="font-serif italic font-normal text-white/50">From the people who run it.</span>
+        </h2>
+      </div>
+
+      {/* Split panel */}
+      <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-0 border-t border-white/10">
+
+        {/* LEFT — Testimonial */}
+        <div className="reveal py-14 lg:py-16 lg:pr-16 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/10">
+          <div>
+            <span className="font-serif italic text-coral/40 text-7xl leading-none block mb-6">"</span>
+            <p className="font-serif text-2xl md:text-[28px] italic text-white/90 leading-[1.5] text-balance">
+              {siteData.testimonial.quote}
+            </p>
+          </div>
+
+          <div className="mt-12 flex items-center gap-4 pt-8 border-t border-white/10">
+            <div className="w-11 h-11 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-white/80 font-semibold text-sm">
               {siteData.testimonial.name.charAt(0)}
             </div>
             <div>
-              <p className="text-base font-bold text-ink">{siteData.testimonial.name}</p>
-              <p className="text-sm font-medium text-ink/60">{siteData.testimonial.role}</p>
+              <p className="text-[14px] font-semibold text-white">{siteData.testimonial.name}</p>
+              <p className="text-[12px] text-white/45">{siteData.testimonial.role}</p>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Case Study Side (Dark) */}
-      <div className="bg-ink text-paper px-8 py-20 lg:p-24 flex flex-col justify-center relative overflow-hidden reveal reveal-delay-2">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-coral/10 blur-[80px] rounded-full pointer-events-none" />
-        <div className="relative z-10">
+        {/* RIGHT — Case study */}
+        <div className="reveal reveal-delay-1 py-14 lg:py-16 lg:pl-16">
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-2 h-2 rounded-full bg-coral animate-pulse" />
-            <p className="text-xs font-bold uppercase tracking-widest text-paper/50">Featured Case Study</p>
+            <span className="w-1.5 h-1.5 rounded-full bg-coral animate-pulse" />
+            <p className="text-[11px] font-bold uppercase tracking-widest text-white/40">Featured Case Study</p>
           </div>
-          
-          <h3 className="font-sans text-3xl md:text-4xl font-semibold mb-4 text-balance">{siteData.caseStudy.headline}</h3>
-          <p className="inline-block px-3 py-1 bg-white/10 rounded-md text-xs font-medium text-paper/80 mb-6 border border-white/10">
+
+          <h3 className="font-sans text-3xl md:text-4xl font-semibold text-white leading-tight text-balance mb-5">
+            {siteData.caseStudy.headline}
+          </h3>
+
+          <p className="inline-block px-3 py-1 bg-white/[0.05] rounded-md text-xs font-medium text-white/60 mb-7 border border-white/10">
             {siteData.caseStudy.sector}
           </p>
-          
-          <p className="text-base leading-relaxed text-paper/70 mb-10">
+
+          <p className="text-[15px] leading-relaxed text-white/60 mb-12 max-w-xl">
             {siteData.caseStudy.body}
           </p>
-          
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/10">
+
+          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
             {siteData.caseStudy.metrics.map((metric, idx) => (
               <div key={idx}>
-                <p className="font-serif text-2xl md:text-3xl italic text-coral mb-1">{metric.value}</p>
-                <p className="text-xs font-semibold uppercase tracking-wider text-paper/40">{metric.label}</p>
+                <p className="font-serif text-3xl md:text-4xl italic text-coral leading-none mb-2 tabular-nums">
+                  {metric.value}
+                </p>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-white/40 leading-snug">
+                  {metric.label}
+                </p>
               </div>
             ))}
           </div>
+
+          
+           <a href="https://www.jemhr.com/customers/meridian-group/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mt-12 inline-flex items-center gap-3 text-[14px] font-semibold tracking-tight text-white/60 hover:text-white transition-colors duration-300"
+          >
+            <span className="w-6 h-px bg-coral transition-all duration-500 group-hover:w-10" />
+            <span>Read the full Meridian story</span>
+            <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-white group-hover:translate-x-1 transition-all duration-300" />
+          </a>
         </div>
       </div>
-
     </div>
-  </Section>
+  </section>
 );
 
+
+
 const WhyJemAndSecurity = () => (
-  <Section id="security">
-    <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
-      <div className="reveal">
-        <Badge className="mb-4">Our Mission</Badge>
-        <h2 className="font-sans text-4xl md:text-5xl font-semibold text-ink tracking-tight text-balance">
-          Bridging the gap for the <span className="font-serif italic font-normal text-palm">unseen majority.</span>
-        </h2>
-        <p className="mt-6 text-lg text-ink/65 leading-relaxed max-w-xl">
-          Three in four South African workers are deskless, yet almost zero enterprise software is built with them in mind. They're locked out of standard corporate tools, and often locked out of fair financial services too. Jem meets them exactly where they already are, on their terms—and we're scaling this infrastructure across the continent.
-        </p>
-        <div className="mt-10">
-          <Button variant="outline" icon="arrow">Read Our Full Story</Button>
+  <Section id="about" bleed>
+    <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+      {/* Part 1 — Mission. Editorial headline, tight body, one quiet stat. */}
+      <div className="reveal grid lg:grid-cols-[1.35fr_1fr] gap-12 lg:gap-24 items-start mb-24 md:mb-32">
+        <div>
+          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/40">
+            Why we exist
+          </span>
+          <h2 className="mt-6 font-sans text-4xl md:text-5xl lg:text-[64px] font-semibold tracking-[-0.03em] text-ink leading-[1.02] text-balance">
+            Three in four workers are invisible to enterprise software.{' '}
+            <span className="font-serif italic font-normal">
+              We built for them anyway.
+            </span>
+          </h2>
+        </div>
+
+        <div className="lg:pt-4">
+          <p className="text-lg md:text-xl text-ink/75 leading-[1.65] max-w-xl">
+            75% of South African workers are deskless. They're locked out of the tools built for office teams, and priced out of fair financial services. Jem meets them where they already are — and we're scaling that infrastructure across the continent.
+          </p>
+          <div className="mt-10">
+            <Button variant="outline" icon="arrow">Read Our Full Story</Button>
+          </div>
         </div>
       </div>
 
-      <div className="relative reveal reveal-delay-2">
-        <div className="absolute inset-0 bg-gradient-to-br from-sand to-mist rounded-[2.5rem] transform rotate-3 scale-105 opacity-50 border border-ink/5" />
-        <div className="relative bg-white rounded-[2rem] p-10 shadow-xl border border-ink/5">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-ink rounded-xl flex items-center justify-center">
-              <Shield className="w-6 h-6 text-white" />
+      {/* Part 2 — Credential rail. Hairline-separated facts, no cards, no shadows. */}
+      <div id="security" className="reveal pt-16 md:pt-20 border-t border-ink/[0.12] scroll-mt-24">
+        <div className="grid lg:grid-cols-[1fr_1.6fr] gap-12 lg:gap-24 items-start">
+
+          {/* Left — title block */}
+          <div>
+            <div className="flex items-center gap-3 mb-5">
+              <Shield className="w-[18px] h-[18px] text-ink/60" strokeWidth={1.5} />
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/40">
+                Enterprise security
+              </span>
             </div>
-            <div>
-              <h3 className="font-bold text-xl text-ink">Enterprise Security</h3>
-              <p className="text-sm font-medium text-ink/50">Infrastructure your board signs off on.</p>
-            </div>
+            <h3 className="font-sans text-2xl md:text-3xl font-semibold text-ink leading-tight tracking-[-0.01em] text-balance">
+              Infrastructure your board signs off on.
+            </h3>
+            <p className="mt-4 text-[15px] text-ink/55 leading-[1.7] max-w-sm">
+              Bank-grade by default. Certified, compliant, and audited — for the two departments that worry most.
+            </p>
           </div>
-          
-          <ul className="space-y-4">
+
+          {/* Right — credential rows, hairline-separated */}
+          <ul className="divide-y divide-ink/[0.10] border-t border-ink/[0.10]">
             {siteData.securityBadges.map((badge, idx) => (
-              <li key={idx} className="flex items-center gap-4 p-3 rounded-xl hover:bg-sand transition-colors">
-                <div className="w-8 h-8 rounded-full bg-palm/10 flex items-center justify-center shrink-0">
-                  <ShieldCheck className="w-4 h-4 text-palm" />
-                </div>
-                <span className="text-sm font-semibold text-ink/80">{badge}</span>
+              <li
+                key={idx}
+                className="grid grid-cols-[40px_1fr_auto] items-center gap-6 py-6 group"
+              >
+                <span className="font-mono text-[11px] font-medium tracking-widest text-ink/35 group-hover:text-ink/60 transition-colors">
+                  0{idx + 1}
+                </span>
+                <span className="font-sans text-[15px] md:text-base font-medium text-ink/85 group-hover:text-ink transition-colors">
+                  {badge}
+                </span>
+                <CheckCircle2
+                  className="w-4 h-4 text-ink/25 group-hover:text-palm transition-colors"
+                  strokeWidth={1.75}
+                />
               </li>
             ))}
           </ul>
         </div>
       </div>
+
     </div>
   </Section>
 );
 
 const CTA = () => (
-  <Section className="bg-coral py-24 md:py-32 relative overflow-hidden" bleed>
-    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-white/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
-    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-ink/10 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
-    
-    <div className="max-w-4xl mx-auto text-center px-6 relative z-10 reveal">
-      <h2 className="font-sans text-5xl md:text-6xl font-semibold text-white tracking-tight text-balance mb-8">
-        Ready to watch your frontline <span className="font-serif italic font-normal text-ink">fall into place?</span>
+  <section
+    id="contact"
+    className="relative overflow-hidden py-28 md:py-40"
+    style={{ backgroundColor: '#051d2e' }}
+  >
+    <div className="relative max-w-4xl mx-auto px-6 md:px-12 text-center">
+
+      {/* Eyebrow — same hairline pattern as Pillars and SocialProof */}
+      <div className="reveal inline-flex items-center gap-3 mb-8">
+        <span className="w-8 h-px bg-coral" />
+        <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-coral">
+          Choose Jem
+        </span>
+        <span className="w-8 h-px bg-coral" />
+      </div>
+
+      {/* Headline — same editorial pattern used throughout the page */}
+      <h2 className="reveal font-sans text-4xl md:text-5xl lg:text-[64px] font-semibold text-white tracking-[-0.03em] leading-[1.02] text-balance mb-8">
+        Watch your frontline{' '}
+        <span className="font-serif italic font-normal text-white/60">
+          fall into place.
+        </span>
       </h2>
-      <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-        Join the 200+ enterprise companies transforming their operations, HR, and employee wellness with Jem today.
+
+      <p className="reveal text-lg md:text-xl text-white/55 leading-[1.65] font-light max-w-2xl mx-auto mb-12">
+        Book a demo and we'll show you what's possible when you run your deskless teams with Jem.
       </p>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <Button variant="dark" className="w-full sm:w-auto px-10 py-4 text-base">Book a Priority Demo</Button>
-        <Button variant="ghost" className="w-full sm:w-auto px-10 py-4 text-base text-white hover:bg-white/10 border border-white/20 hover:border-white">Explore the Platform</Button>
+
+      {/* Action row */}
+      <div className="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+        <Button variant="primary" icon="arrow" className="w-full sm:w-auto px-8 py-4 text-base">
+          Book a demo
+        </Button>
+        <button className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/85 hover:text-white border border-white/20 hover:border-white/40 transition-colors">
+          <PlayCircle className="w-4 h-4" />
+          See Jem in action
+        </button>
       </div>
     </div>
-  </Section>
+
+    {/* Hairline divider separating CTA from footer */}
+    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-px bg-white/[0.08]" />
+  </section>
 );
 
-const Footer = () => (
-  <footer className="bg-ink text-paper py-16 md:py-24 border-t border-white/10">
-    <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 lg:gap-8">
-      
-      <div className="col-span-2 lg:col-span-2">
-        <div className="flex items-center gap-2 mb-6">
-          <div className="w-8 h-8 rounded-lg bg-coral flex items-center justify-center">
-            <span className="text-white font-serif font-bold text-xl italic">j</span>
-          </div>
-          <span className="font-semibold text-2xl tracking-tight text-white">Jem<span className="text-coral">.</span></span>
-        </div>
-        <p className="text-paper/50 text-sm leading-relaxed max-w-xs mb-8">
-          Africa's premier platform for the deskless workforce. Built for enterprise scale, designed for frontline simplicity.
-        </p>
-        <div className="flex gap-4">
-          {/* Social mock placeholders */}
-          <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"><Globe className="w-5 h-5"/></div>
-          <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"><Briefcase className="w-5 h-5"/></div>
-        </div>
-      </div>
 
-      <div>
-        <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Platform</h4>
-        <ul className="space-y-4 text-sm text-paper/60">
-          <li><a href="#" className="hover:text-white transition-colors">Communication</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">HR Operations</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Earned Wage Access</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Integrations</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Security</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Company</h4>
-        <ul className="space-y-4 text-sm text-paper/60">
-          <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Customers</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Careers</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-xs">Legal</h4>
-        <ul className="space-y-4 text-sm text-paper/60">
-          <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">PAIA Manual</a></li>
-          <li><a href="#" className="hover:text-white transition-colors">Security Policy</a></li>
-        </ul>
-      </div>
-
-    </div>
-    <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p className="text-paper/40 text-xs">© {new Date().getFullYear()} Jem HR. All rights reserved.</p>
-      <p className="text-paper/40 text-xs flex items-center gap-1">Designed with precision <Zap className="w-3 h-3 text-coral"/></p>
-    </div>
-  </footer>
-);
 
 export default function App() {
   // Initialize scroll reveal animations
@@ -1477,7 +1494,6 @@ export default function App() {
           <CTA />
         </main>
         
-        <Footer />
       </div>
     </>
   );

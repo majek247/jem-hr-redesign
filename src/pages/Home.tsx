@@ -603,138 +603,103 @@ const Badge = ({ children, className = '' }) => (
   </div>
 );
 
-
 const ChatMockup = () => {
   return (
-    <div className="relative mx-auto w-full max-w-[340px] md:max-w-md perspective-1000">
-      {/* Decorative ambient background glows */}
-      <div className="absolute -left-12 -top-12 h-64 w-64 rounded-full bg-palm/20 blur-[60px] animate-pulse-soft" />
-      <div className="absolute -bottom-16 -right-12 h-72 w-72 rounded-full bg-coral/20 blur-[60px] animate-pulse-soft" style={{ animationDelay: '2s' }} />
+    <div className="relative mx-auto w-full max-w-[380px]">
+      {/* Soft ambient halo — single, not two competing */}
+      <div className="absolute inset-0 -m-16 rounded-[3rem] bg-coral/[0.06] blur-[100px] pointer-events-none" />
 
-      {/* Main Phone/Chat Container */}
-      <div className="relative rounded-[2.5rem] border-[6px] border-white/40 bg-white/60 p-2 shadow-2xl backdrop-blur-xl animate-float">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-white/40 rounded-b-2xl blur-[1px]"></div>
-        
-        <div className="relative h-[600px] w-full overflow-hidden rounded-[2rem] bg-sand/50 shadow-inner flex flex-col">
-          
-          {/* Chat Header */}
-          <div className="flex items-center gap-3 bg-white/95 px-5 py-4 shadow-sm backdrop-blur-md border-b border-ink/5 z-10">
-            <button className="text-ink/40 hover:text-ink transition-colors">
-              <ChevronDown className="w-5 h-5 rotate-90" />
-            </button>
-            <div className="relative">
-              <span className="grid h-10 w-10 place-items-center rounded-full bg-coral text-lg font-serif font-bold italic text-white shadow-sm">
-                j
-              </span>
-              <span className="absolute bottom-0 right-0 h-3 w-3 rounded-full border-2 border-white bg-green-500"></span>
-            </div>
-            <div className="flex-1">
-              <p className="text-[15px] font-semibold text-ink leading-tight">Jem HR</p>
-              <p className="text-[11px] font-medium text-ink/50">Verified Business Account</p>
-            </div>
+      {/* Phone frame — single hairline, no glassmorphism, no float */}
+      <div className="relative rounded-[2rem] bg-white border border-ink/[0.08] shadow-[0_24px_60px_-20px_rgba(15,23,42,0.18)] overflow-hidden">
+        {/* Status bar */}
+        <div className="flex items-center justify-between px-6 pt-5 pb-3">
+          <span className="text-[10px] font-medium text-ink/40 tabular-nums">9:41</span>
+          <div className="flex items-center gap-1.5">
+            <span className="w-3.5 h-2 rounded-sm border border-ink/25" />
+            <span className="w-1.5 h-1 rounded-sm bg-ink/40" />
           </div>
+        </div>
 
-          {/* Chat Body - Scrollable Area */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-5 hide-scrollbar bg-[#E5DCD5]/10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-            
-            {/* Date Indicator */}
-            <div className="flex justify-center my-2">
-              <span className="bg-white/80 text-[10px] uppercase tracking-wider font-semibold px-3 py-1 rounded-full text-ink/50 shadow-sm">Today</span>
-            </div>
-
-            {/* Message 1: Payslip (From Jem) */}
-            <div className="flex flex-col gap-1 items-start animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
-              <div className="glass-chat-bubble max-w-[85%] rounded-2xl rounded-tl-sm px-4 py-3 text-[14px] text-ink shadow-sm relative group">
-                <p className="font-medium text-ink mb-1">Hi Thabo 👋</p>
-                <p className="text-ink/80 leading-snug">Your payslip for <strong className="text-ink">October 2026</strong> is now available.</p>
-                
-                <div className="mt-3 rounded-xl border border-ink/5 bg-sand/50 p-3 flex items-center gap-3 cursor-pointer hover:bg-sand transition-colors">
-                  <div className="bg-palm/10 p-2 rounded-lg">
-                    <FileText className="w-5 h-5 text-palm" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-[13px] font-semibold">Oct_Payslip.pdf</p>
-                    <p className="text-[11px] text-ink/50">1.2 MB</p>
-                  </div>
-                  <ArrowDownToLine className="w-4 h-4 text-ink/40" />
-                </div>
-                <span className="absolute bottom-1.5 right-2 text-[9px] text-ink/30">09:41</span>
-              </div>
-            </div>
-
-            {/* Message 2: Employee Reply */}
-            <div className="flex flex-col gap-1 items-end animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'both' }}>
-              <div className="max-w-[75%] rounded-2xl rounded-tr-sm bg-[#D9FDD3] px-4 py-2.5 text-[14px] text-ink shadow-sm relative">
-                <p>Got it, thanks! 🙏</p>
-                <div className="flex items-center gap-1 mt-1 justify-end">
-                  <span className="text-[9px] text-ink/40">09:45</span>
-                  <CheckCircle2 className="w-3 h-3 text-blue-500" />
-                </div>
-              </div>
-            </div>
-
-            {/* Message 3: Shift Feedback (From Jem) */}
-            <div className="flex flex-col gap-1 items-start animate-fade-in" style={{ animationDelay: '2s', animationFillMode: 'both' }}>
-              <div className="glass-chat-bubble max-w-[85%] rounded-2xl rounded-tl-sm px-4 py-3 text-[14px] text-ink shadow-sm relative">
-                <p className="font-medium text-coral flex items-center gap-1.5 mb-1"><Clock className="w-4 h-4"/> Shift Completed</p>
-                <p className="text-ink/80 leading-snug">You just clocked out from the <strong>Sandton Branch</strong>. How was your shift today?</p>
-                
-                <div className="mt-3 flex flex-wrap gap-2">
-                  <button className="flex-1 bg-white border border-ink/10 rounded-lg py-2 text-[13px] font-medium hover:bg-palm/5 hover:border-palm/30 hover:text-palm transition-colors">👍 Great</button>
-                  <button className="flex-1 bg-white border border-ink/10 rounded-lg py-2 text-[13px] font-medium hover:bg-yellow-500/5 hover:border-yellow-500/30 hover:text-yellow-600 transition-colors">😐 Okay</button>
-                  <button className="flex-1 bg-white border border-ink/10 rounded-lg py-2 text-[13px] font-medium hover:bg-coral/5 hover:border-coral/30 hover:text-coral transition-colors">👎 Tough</button>
-                </div>
-                <span className="absolute bottom-1.5 right-2 text-[9px] text-ink/30">14:30</span>
-              </div>
-            </div>
-
-            {/* Message 4: Financial Wellness (EWA) */}
-            <div className="flex flex-col gap-1 items-start animate-fade-in" style={{ animationDelay: '3.5s', animationFillMode: 'both' }}>
-              <div className="max-w-[85%] rounded-2xl rounded-tl-sm border border-palm/20 bg-gradient-to-br from-palm/10 to-palm/5 px-4 py-3 text-[14px] text-ink shadow-sm relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-16 h-16 bg-palm/10 rounded-full blur-xl -translate-y-1/2 translate-x-1/2"></div>
-                <p className="font-medium text-palm flex items-center gap-1.5 mb-1"><Wallet className="w-4 h-4"/> Earned Wage Access</p>
-                <p className="text-ink/80 leading-snug">You have <strong className="text-ink text-[15px]">R 850.00</strong> in available earned wages.</p>
-                
-                <button className="mt-3 w-full bg-palm text-white rounded-xl py-2.5 text-[13px] font-semibold flex justify-center items-center gap-2 hover:bg-palm/90 transition-colors shadow-md">
-                  Withdraw to Bank <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-                <span className="absolute bottom-1.5 right-2 text-[9px] text-palm/50">14:31</span>
-              </div>
-            </div>
-
+        {/* Chat header */}
+        <div className="flex items-center gap-3 px-5 py-4 border-b border-ink/[0.06]">
+          <div className="relative">
+            <span className="grid h-10 w-10 place-items-center rounded-full bg-coral text-white font-serif text-base italic">
+              j
+            </span>
+            <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full border-2 border-white bg-green-500" />
           </div>
+          <div className="flex-1">
+            <p className="text-[14px] font-semibold text-ink leading-tight">Jem HR</p>
+            <p className="text-[11px] text-ink/45">Verified Business</p>
+          </div>
+        </div>
 
-          {/* Chat Footer */}
-          <div className="bg-white/95 px-4 py-3 border-t border-ink/5 backdrop-blur-md">
-            <div className="bg-sand rounded-full px-4 py-2.5 flex items-center gap-3">
-              <span className="text-ink/40 text-[14px] flex-1">Type a message...</span>
-              <div className="w-7 h-7 rounded-full bg-coral/10 flex items-center justify-center cursor-pointer">
-                <MessageSquare className="w-3.5 h-3.5 text-coral" />
+        {/* Messages — three only, calm, no timestamps floating */}
+        <div className="px-5 py-6 space-y-4 bg-sand/30">
+          {/* Payslip */}
+          <div className="max-w-[85%]">
+            <div className="rounded-2xl rounded-tl-md bg-white border border-ink/[0.06] px-4 py-3 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+              <p className="text-[13.5px] text-ink leading-snug">
+                Hi Thabo 👋 Your <span className="font-medium">October payslip</span> is available.
+              </p>
+              <div className="mt-3 flex items-center gap-2.5 rounded-xl bg-sand/60 px-3 py-2.5">
+                <FileText className="w-4 h-4 text-palm shrink-0" strokeWidth={1.75} />
+                <span className="text-[12px] font-medium text-ink/80 truncate flex-1">Oct_Payslip.pdf</span>
+                <ArrowDownToLine className="w-3.5 h-3.5 text-ink/40" />
               </div>
             </div>
           </div>
 
+          {/* Employee reply */}
+          <div className="flex justify-end">
+            <div className="max-w-[70%] rounded-2xl rounded-tr-md bg-[#D9FDD3] px-4 py-2.5">
+              <p className="text-[13.5px] text-ink leading-snug">Got it, thanks! 🙏</p>
+            </div>
+          </div>
+
+          {/* EWA */}
+          <div className="max-w-[88%]">
+            <div className="rounded-2xl rounded-tl-md bg-white border border-ink/[0.06] px-4 py-3 shadow-[0_1px_2px_rgba(15,23,42,0.04)]">
+              <div className="flex items-center gap-1.5 mb-1.5">
+                <Wallet className="w-3.5 h-3.5 text-palm" strokeWidth={1.75} />
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-palm">
+                  Earned Wage Access
+                </span>
+              </div>
+              <p className="text-[13.5px] text-ink leading-snug">
+                <span className="font-semibold text-ink">R 850.00</span> available to withdraw.
+              </p>
+              <button className="mt-3 w-full rounded-xl bg-palm text-white text-[12.5px] font-semibold py-2.5 flex items-center justify-center gap-1.5">
+                Withdraw to bank
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer input */}
+        <div className="px-5 py-4 border-t border-ink/[0.06]">
+          <div className="rounded-full bg-sand px-4 py-2.5 flex items-center gap-3">
+            <span className="text-[13px] text-ink/40 flex-1">Type a message…</span>
+            <MessageSquare className="w-3.5 h-3.5 text-coral" strokeWidth={2} />
+          </div>
         </div>
       </div>
-      
-      {/* Floating UI Elements for depth */}
-      <div className="absolute -right-8 top-32 glass-panel p-3 rounded-2xl shadow-xl animate-float-delayed z-20 flex items-center gap-3">
-        <div className="bg-green-100 p-2 rounded-full text-green-600"><Check className="w-4 h-4"/></div>
-        <div>
-          <p className="text-[11px] font-bold text-ink">98% Read Rate</p>
-          <p className="text-[9px] text-ink/60">Across organization</p>
+
+      {/* ONE floating proof card — bottom-right, quiet */}
+      <div className="absolute -bottom-6 -right-6 md:-right-10 hidden sm:flex items-center gap-3 rounded-2xl bg-white border border-ink/[0.08] shadow-[0_12px_32px_-12px_rgba(15,23,42,0.18)] px-4 py-3">
+        <div className="w-8 h-8 rounded-full bg-palm/10 flex items-center justify-center">
+          <Check className="w-4 h-4 text-palm" strokeWidth={2.5} />
         </div>
-      </div>
-      
-      <div className="absolute -left-6 bottom-40 glass-panel p-3 rounded-2xl shadow-xl animate-float-fast z-20 flex items-center gap-3 border-l-4 border-l-palm">
         <div>
-          <p className="text-[11px] font-bold text-ink">Zero API Costs</p>
-          <p className="text-[9px] text-ink/60">Direct payroll integration</p>
+          <p className="text-[12px] font-semibold text-ink leading-tight">98% read rate</p>
+          <p className="text-[10px] text-ink/45 leading-tight mt-0.5">across 250k workers</p>
         </div>
       </div>
     </div>
   );
 };
+
 
 const Hero = () => (
   <Section className="pt-16 md:pt-24 pb-16 lg:pb-32 overflow-hidden relative">
