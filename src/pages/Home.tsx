@@ -80,6 +80,17 @@ body {
     .animate-float-fast { animation: float-fast 4s ease-in-out infinite; }
     .animate-marquee { animation: marquee 35s linear infinite; }
     .animate-pulse-soft { animation: pulse-soft 8s ease-in-out infinite; }
+    .animate-reveal-up { animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    .animate-slide-in-right { animation: slide-in-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+    .bar-fill { transition: width 1.1s cubic-bezier(0.16, 1, 0.3, 1); }
+
+    .phone-frame {
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+    }
+    .phone-frame:hover {
+      transform: perspective(1200px) rotatey(-3deg) rotatex(1deg) translatey(-4px);
+    }
     
     .reveal {
       opacity: 0;
@@ -201,46 +212,46 @@ logos: [
       key: 'comm',
       title: 'Enterprise Communication',
       tagline: 'Total Workforce Reach',
-      description: 'Bypass physical notice boards and untrackable SMS. Deliver critical company news, policy updates, and urgent alerts directly to the device in their pocket. Gain absolute certainty with rich media, read-receipts, and deep engagement analytics.',
+      description: 'Reach employees directly through WhatsApp with targeted communications, policy updates, urgent alerts, and other important information. See who received and read each message, and track engagement across your workforce.',
       color: '#E05C4A',
       visual: 'broadcast',
-      cta: { label: 'See communication in action', href: '#solutions' },
-      points: [
-        'Two-way targeted messaging by role, region, or shift', 
-        'Automated multi-language translation for diverse workforces', 
-        'Real-time engagement and read-receipt analytics', 
-        'Multimedia broadcast capabilities (Video, PDF, Imagery)'
-      ]
+   cta: { label: 'See communication in action', href: 'https://www.jemhr.com/connect/', external: true },
+points: [
+  'Targeted messaging by role, region, or shift',
+  'Multi-language communication',
+  'Read receipts and engagement analytics',
+  'Rich media including video, PDF, and images'
+]
     },
     {
       key: 'hr',
       title: 'Automated HR Operations',
       tagline: 'Administrative Zero',
-      description: 'Digitize the entire employee lifecycle without installing a single app. Distribute payslips securely, process leave requests automatically, and execute onboarding entirely over WhatsApp. Empower your workforce with self-service capabilities that drastically reduce inbound queries.',
+      description: 'Jem digitizes the routine processes that create unnecessary work for HR teams. Employees can access documents, manage leave, respond to shift requirements, and complete HR tasks directly through WhatsApp.',
       color: '#E05C4A',
       visual: 'payslip',
-      cta: { label: 'Walk through the HR workflow', href: '#solutions' },
-      points: [
-        'Secure, automated digital payslip distribution', 
-        'Self-service leave management and real-time balance checking', 
-        'Shift scheduling coordination with instant feedback loops', 
-        'Legally binding digital document signing via mobile'
-      ]
+      cta: { label: 'Walk through the HR workflow',  href: 'https://www.jemhr.com/manage/', external: true },
+   points: [
+  'Instant, secure digital payslips',
+ 'Self-service leave management',
+  'Shift scheduling with instant feedback',
+  'Legally binding mobile signatures'
+]
     },
     {
       key: 'fin',
       title: 'Financial Wellness',
       tagline: 'Ethical Financial Access',
-      description: 'Provide responsible Earned Wage Access (EWA) seamlessly through the chat interface. Help your team navigate mid-month emergencies without predatory payday loans, at absolute zero cost or cash-flow impact to your balance sheet.',
+      description: 'Jem gives employees responsible access to earned wages when they need them, directly through WhatsApp. No interest. No employer cash-flow impact. No unnecessary friction.',
       color: '#E05C4A',
       visual: 'ewa',
-      cta: { label: 'Model the EWA impact', href: '#solutions' },
-      points: [
-        'Instant Earned Wage Access directly to employee bank accounts', 
-        'Zero impact on company cash flow or working capital', 
-        'Automated payroll reconciliation via secure API integrations', 
-        'Interactive financial literacy and savings modules'
-      ]
+cta: { label: 'Explore the reward suite', href: 'https://www.jemhr.com/reward/', external: true },
+   points: [
+  'Wages accessed before payday',
+  'No cost to your balance sheet',
+  'Payroll reconciled automatically',
+  'Everyday savings and money guidance'
+]
     }
   ],
 
@@ -249,8 +260,8 @@ logos: [
       role: 'CHRO / Head of People',
       label: 'Engagement & Retention',
       icon: <Users className="w-5 h-5" />,
-      headline: 'Stop guessing what the frontline thinks.',
-      body: 'High turnover isn\'t just a cost of doing business; it\'s a symptom of disconnect. Jem bridges the gap between head office and the shop floor, turning invisible workers into engaged team members who stay longer and contribute more.',
+      headline: 'Give your frontline workforce a stronger connection to the business.',
+      body: 'Frontline employees are often the hardest people for People teams to reach. Jem gives you a direct, measurable channel to communicate with employees, gather feedback, and deliver HR services through the platform they already use.',
       metrics: [
         { value: '42%', label: 'Reduction in HR queries' },
         { value: '3x', label: 'Faster policy rollout' },
@@ -258,7 +269,7 @@ logos: [
       ],
       testimonials: [
         {
-          quote: "10,000+ colleagues across hundreds of sites — most never had a company email. Weeks into launch we had 90% registered. For a People team responsible for this many people, that visibility is something we've never had before.",
+          quote: "10,000+ colleagues across hundreds of sites, most never had a company email. Weeks into launch we had 90% registered. For a People team responsible for this many people, that visibility is something we’ve never had before.",
           name: 'Lerato Ndoro',
           role: 'CPO, Servest'
         }
@@ -268,8 +279,8 @@ logos: [
       role: 'CFO / Head of Finance',
       label: 'Efficiency & ROI',
       icon: <PieChart className="w-5 h-5" />,
-      headline: 'Digitization that pays for itself in months.',
-      body: 'Printing physical payslips, managing manual leave forms, and handling continuous HR admin queries represent massive hidden operational costs. Jem eliminates these inefficiencies overnight — with zero impact on working capital.',
+      headline: 'Reduce the cost of managing a distributed workforce.',
+      body: 'Managing thousands of frontline employees creates a long tail of administrative costs, from printed documents and employee communications to repetitive HR support. Jem helps consolidate these processes digitally, reducing the cost of serving the workforce at scale.',
       metrics: [
         { value: 'R1.2M+', label: 'Annual savings / 5k staff' },
         { value: 'Zero', label: 'Impact on working capital' },
@@ -287,8 +298,8 @@ logos: [
       role: 'COO / Head of Operations',
       label: 'Productivity & Agility',
       icon: <Activity className="w-5 h-5" />,
-      headline: 'Operational agility at scale.',
-      body: 'When policies change, shifts need covering, or critical safety updates must be deployed, you cannot rely on bulletin boards or word-of-mouth. Jem gives you a direct, trackable line to every single worker.',
+      headline: 'Keep your frontline workforce aligned at scale.',
+      body: 'When teams are spread across sites and shifts, operational changes can be difficult to communicate quickly. Jem gives operations teams a direct, trackable way to reach employees, distribute critical updates, and keep everyone aligned.',
       metrics: [
         { value: '100%', label: 'Workforce reachability' },
         { value: '< 3 min', label: 'Critical alert read time' },
@@ -296,7 +307,7 @@ logos: [
       ],
       testimonials: [
         {
-          quote: "Our cleaners work across client sites so communicating was always a challenge. Jem allows us to communicate directly through WhatsApp — we've achieved over 90% registration, which we honestly did not expect so early.",
+          quote: "Our cleaners work across client sites so communicating was always a challenge. Jem allows us to communicate directly through WhatsApp, we’ve achieved over 90% registration, which we honestly did not expect so early.",
           name: 'Debbie Stanbury',
           role: 'CEO, Kusasa Cleaning'
         }
@@ -315,7 +326,7 @@ logos: [
       ],
       testimonials: [
         {
-          quote: "They didn't just hand us technology; they guided us through concept, implementation, adoption and ongoing support. Responsive, solution-driven, and excellent value — I'd confidently recommend Jem HR to any organisation looking to modernise.",
+          quote: "They didn’t just hand us technology; they guided us through concept, implementation, adoption and ongoing support. Responsive, solution-driven, and excellent value, I’d confidently recommend Jem HR to any organisation looking to modernise.",
           name: 'Marius Erasmus',
           role: 'CTO, Auto & Truck Tyres'
         }
@@ -331,12 +342,12 @@ logos: [
     {
       number: '01',
       title: 'Integrate your existing systems',
-      description: 'We connect directly to your current HRIS and Payroll software (Sage, SAP, etc.) via secure API or simple SFTP file drops. No rip-and-replace required.'
+      description: 'Connect securely to your existing HRIS and payroll systems, including Sage and SAP, through APIs or SFTP. No rip-and-replace. No changes to your core systems.'
     },
     {
       number: '02',
       title: 'Configure your workflows',
-      description: 'Set up your approval chains, custom broadcast segments, and brand identity within our intuitive web dashboard. Establish specific access controls for regional managers.'
+      description: 'Define workflows, approval chains, employee groups, branding, and access permissions from the Jem dashboard. Give each team the access they need, without adding operational complexity.'
     },
     {
       number: '03',
@@ -347,7 +358,7 @@ logos: [
   caseStudy: {
     headline: 'From printed payslips to a fully engaged workforce.',
     sector: 'Deskless Retail & FMCG • 5,500+ Merchandisers',
-    body: "Meridian's merchandisers were spread across South Africa — payslips printed and couriered at huge cost, with only 600 of 5,500 employees holding any digital access. Starting with payslips, Meridian rolled out every product: Earned Wage Access, Jem Mobile, Savings, Comms, and an EAP, reaching a workforce that had never felt heard.",
+    body: "Meridian’s 5,500 merchandisers were spread across South Africa, with payslips printed and couriered to employees at significant cost. Only 600 employees had digital access. Meridian started with digital payslips, then expanded into Earned Wage Access, Jem Mobile, Savings, Communications, and an EAP, giving its wider workforce access to more of the services they needed.",
     metrics: [
       { value: '98%', label: 'Employee adoption' },
       { value: '10%', label: 'Jem Mobile uptake, 90 days' },
@@ -435,6 +446,14 @@ const audienceVisuals = [
 
 
 const AudiencePreview = ({ visual }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(false);
+    const t = setTimeout(() => setMounted(true), 60);
+    return () => clearTimeout(t);
+  }, [visual]);
+
   if (!visual) return null;
   const accent = visual.accent;
 
@@ -457,7 +476,7 @@ const AudiencePreview = ({ visual }) => {
         {visual.rows && (
           <>
             {visual.headlineMetric && (
-              <div className="flex items-end justify-between mb-6">
+              <div className="flex items-end justify-between mb-6 animate-reveal-up">
                 <p className="text-[40px] font-bold tabular-nums leading-none text-ink">{visual.headlineMetric.value}</p>
                 <span className="text-[12px] font-semibold text-ink/50 mb-1.5">{visual.headlineMetric.label}</span>
               </div>
@@ -470,7 +489,10 @@ const AudiencePreview = ({ visual }) => {
                     <span className="font-bold tabular-nums text-ink">{row.value}%</span>
                   </div>
                   <div className="h-2.5 rounded-full bg-ink/[0.06] overflow-hidden">
-                    <div className="h-full rounded-full" style={{ width: `${row.value}%`, background: accent }} />
+                    <div
+                      className="h-full rounded-full bar-fill"
+                      style={{ width: mounted ? `${row.value}%` : '0%', background: accent, transitionDelay: `${i * 80}ms` }}
+                    />
                   </div>
                 </div>
               ))}
@@ -478,7 +500,7 @@ const AudiencePreview = ({ visual }) => {
             {visual.footerStats && (
               <div className={`grid grid-cols-${visual.footerStats.length} gap-3 mt-6 pt-5 border-t border-ink/[0.07]`}>
                 {visual.footerStats.map((s, i) => (
-                  <div key={i}>
+                  <div key={i} className="animate-reveal-up" style={{ animationDelay: `${100 + i * 90}ms` }}>
                     <p className="text-[18px] font-bold tabular-nums text-ink">{s.value}</p>
                     <p className="text-[10px] font-semibold uppercase tracking-wide text-ink/45">{s.label}</p>
                   </div>
@@ -531,7 +553,7 @@ const AudiencePreview = ({ visual }) => {
               ))}
             </div>
             <div className="mt-5 h-2 rounded-full bg-ink/[0.06] overflow-hidden">
-              <div className="h-full rounded-full" style={{ width: '97%', background: accent }} />
+              <div className="h-full rounded-full bar-fill" style={{ width: mounted ? '97%' : '0%', background: accent }} />
             </div>
           </>
         )}
@@ -541,7 +563,11 @@ const AudiencePreview = ({ visual }) => {
           <>
             <div className="space-y-2.5 mb-6">
               {visual.statusItems.map((item, i) => (
-                <div key={i} className="flex items-center gap-3 p-3 rounded-xl border border-ink/[0.07] bg-white">
+                <div
+                  key={i}
+                  className="flex items-center gap-3 p-3 rounded-xl border border-ink/[0.07] bg-white animate-reveal-up"
+                  style={{ animationDelay: `${i * 90}ms` }}
+                >
                   <div className="w-9 h-9 rounded-lg bg-palm/10 flex items-center justify-center shrink-0">
                     <Database className="w-4 h-4 text-palm" />
                   </div>
@@ -642,7 +668,7 @@ const ChatMockup = () => {
       <div className="absolute inset-0 -m-16 rounded-[3rem] bg-coral/[0.06] blur-[100px] pointer-events-none" />
 
       {/* Phone frame — single hairline, no glassmorphism, no float */}
-      <div className="relative rounded-[2rem] bg-white border border-ink/[0.08] shadow-[0_24px_60px_-20px_rgba(15,23,42,0.18)] overflow-hidden">
+      <div className="phone-frame relative rounded-[2rem] bg-white border border-ink/[0.08] shadow-[0_24px_60px_-20px_rgba(15,23,42,0.18)] overflow-hidden">
         {/* Status bar */}
         <div className="flex items-center justify-between px-6 pt-5 pb-3">
           <span className="text-[10px] font-medium text-ink/40 tabular-nums">9:41</span>
@@ -756,33 +782,50 @@ const Hero = () => (
           <div className="reveal inline-flex items-center gap-3 mb-7">
             <span className="w-8 h-px bg-coral" />
             <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-coral">
-              Enterprise platform · Africa
+              Workforce management · Africa
             </span>
           </div>
 
-          {/* Headline */}
-          <h1 className="reveal font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-semibold tracking-[-0.03em] text-white leading-[1.04] text-balance">
-            The platform for{' '}
-            <span className="font-serif italic font-normal text-white/60">
-              the deskless workforce.
-            </span>
-          </h1>
+{/* Headline */}
+<h1 className="reveal font-sans text-4xl sm:text-5xl lg:text-5xl xl:text-[64px] font-semibold tracking-[-0.03em] text-white leading-[1.04] text-balance max-w-7xl">
+  One system for your{' '}
+  <span className="font-serif italic font-normal text-white/90">
+    entire frontline workforce.
+  </span>
+</h1>
 
-          {/* Sub */}
-          <p className="reveal mt-6 text-lg md:text-xl text-white/60 leading-[1.6] font-light">
-            Reach, engage, and reward every frontline worker — right inside WhatsApp. No app to download. Nothing to train.
-          </p>
+       {/* Sub */}
+<p
+  className="reveal mt-8 text-lg md:text-xl text-white/90 font-light"
+  style={{ lineHeight: 1.6 }}
+>
+  Communicate, manage HR operations, and deliver employee benefits on WhatsApp, without asking your workforce to adopt another app.
+</p>
 
-          {/* Actions */}
-          <div className="reveal mt-10 flex flex-col sm:flex-row gap-3">
-            <Button variant="primary" icon="arrow" className="text-base py-4 px-8">
-              Book an executive demo
-            </Button>
-            <button className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/85 hover:text-white border border-white/20 hover:border-white/40 transition-colors">
-              <PlayCircle className="w-4 h-4" />
-              See the product tour
-            </button>
-          </div>
+     {/* Actions */}
+<div className="reveal mt-10 flex flex-col sm:flex-row gap-3">
+  <a
+    href="https://www.jemhr.com/contact/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 text-base font-semibold transition-all duration-300 ease-out active:scale-95 bg-coral text-white shadow-md hover:bg-coral-dark hover:shadow-lg hover:-translate-y-0.5"
+  >
+    <span className="relative z-10 flex items-center gap-2">
+      Book a demo
+      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+    </span>
+  </a>
+
+  <a
+    href="https://www.jemhr.com/product/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/85 hover:text-white border border-white/20 hover:border-white/40 transition-colors"
+  >
+    <PlayCircle className="w-4 h-4" />
+    See the product tour
+  </a>
+</div>
         </div>
 
      {/* RIGHT — hero image */}
@@ -860,15 +903,20 @@ const ExecReasons = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
 
         {/* Section header — tighter, blacker, more editorial */}
-        <div className="reveal max-w-3xl mb-14 md:mb-16">
+        <div className="reveal max-w-5xl mb-14 md:mb-16">
           <p className="text-[11px] font-bold uppercase tracking-[0.22em] mb-5 text-[#E05C4A]">
-            Built for every executive
+            Built around the frontline
           </p>
-          <h2 className="font-sans text-[40px] md:text-[52px] lg:text-[60px] font-semibold text-[#0A0A0A] tracking-[-0.03em] leading-[1.02] text-balance">
-            Reasons for every executive to sign off.
-          </h2>
-          <p className="mt-6 text-[17px] md:text-[19px] text-[#0A0A0A]/55 leading-[1.55] max-w-xl font-light">
-            See the value Jem brings to your people and business through the seat you sit in.
+
+      <h2 className="font-sans text-[40px] md:text-[52px] lg:text-[60px] font-semibold text-[#000] tracking-[-0.03em] leading-[1.02] text-balance">
+  Better workforce management starts with{' '}
+  <span className="font-serif italic font-normal">
+    better access for your people.
+  </span>
+</h2>
+
+          <p className="mt-6 text-[17px] md:text-[19px] text-[#000]/80 leading-[1.55] max-w-5xl font-light">
+      Jem gives frontline employees a simpler way to access HR, stay informed, and connect with their organisation, while giving leaders the tools and visibility to manage a distributed workforce more effectively.
           </p>
         </div>
 
@@ -915,7 +963,7 @@ const ExecReasons = () => {
         <div className="reveal reveal-delay-2">
           <div className="relative rounded-2xl bg-white border border-[#0A0A0A]/[0.08] overflow-hidden shadow-[0_1px_2px_rgba(10,10,10,0.03),0_24px_60px_-32px_rgba(10,10,10,0.10)]">
 
-            <div key={activeTab} className="relative animate-fade-in" style={{ animationDuration: '450ms' }}>
+            <div key={activeTab} className="relative animate-slide-in-right">
               <div className="grid lg:grid-cols-[1fr_1fr] gap-0">
 
                 {/* LEFT — Narrative */}
@@ -937,14 +985,14 @@ const ExecReasons = () => {
                   <h3 className="font-sans text-[28px] md:text-[34px] font-semibold text-[#0A0A0A] leading-[1.15] tracking-[-0.02em] text-balance">
                     {current.headline}
                   </h3>
-                  <p className="mt-5 text-[15.5px] md:text-[16px] text-[#0A0A0A]/60 leading-[1.65] font-light">
+                  <p className="mt-5 text-[15.5px] md:text-[16px] text-[#000]/80 leading-[1.65] font-light">
                     {current.body}
                   </p>
 
                   {/* Metric row — no card boxes, just hairline separators */}
                   <div className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-[#0A0A0A]/[0.08]">
                     {current.metrics.map((metric, idx) => (
-                      <div key={idx}>
+                      <div key={idx} classname="animate-reveal-up" style={{ animationdelay: `${idx * 100}ms` }}>
                         <p className="font-sans text-[26px] md:text-[30px] font-semibold text-[#0A0A0A] leading-none tracking-[-0.02em] tabular-nums">
                           {metric.value}
                         </p>
@@ -980,12 +1028,12 @@ const ExecReasons = () => {
                     <span className="text-[10.5px] font-bold uppercase tracking-[0.18em] text-[#0A0A0A]/40 pt-1">
                       In their words
                     </span>
-                    <blockquote className="text-[16px] md:text-[17px] text-[#0A0A0A]/80 leading-[1.55] font-light text-balance">
-                      "{t.quote}"
+                    <blockquote className="text-[16px] md:text-[17px] text-[#000]/80 leading-[1.55] font-light text-balance">
+                     “{t.quote}”
                     </blockquote>
                     <figcaption className="shrink-0 flex flex-col md:items-end text-[12.5px] whitespace-nowrap md:pt-1">
                       <span className="font-semibold tracking-[-0.01em] text-[#0A0A0A]">{t.name}</span>
-                      <span className="text-[#0A0A0A]/45 mt-1">{t.role}</span>
+                      <span className="text-[#000]/65 mt-1">{t.role}</span>
                     </figcaption>
                   </figure>
                 ))}
@@ -1002,6 +1050,12 @@ const ExecReasons = () => {
 
 const PillarVisual = ({ type, color }) => {
   if (type === 'broadcast') {
+    const [live, setLive] = useState(false);
+    useEffect(() => {
+      setLive(false);
+      const t = setTimeout(() => setLive(true), 150);
+      return () => clearTimeout(t);
+    }, []);
     return (
    <div className="relative rounded-2xl border border-white/[0.10] overflow-hidden w-full max-w-md">
   <div className="flex items-center justify-between px-5 py-4 border-b border-white/[0.06]">
@@ -1028,22 +1082,22 @@ const PillarVisual = ({ type, color }) => {
           </div>
          
   <div className="space-y-3 pt-1">
-  <div className="flex justify-between items-center pb-3 border-b border-white/[0.06]">
+  <div className="flex justify-between items-center pb-3 border-b border-white/[0.06] animate-reveal-up" style={{ animationDelay: '80ms' }}>
     <span className="text-[11px] text-white/45">Sent</span>
     <span className="text-[12px] font-mono text-white/70">248</span>
   </div>
-  <div className="flex justify-between items-center pb-3 border-b border-white/[0.06]">
+  <div className="flex justify-between items-center pb-3 border-b border-white/[0.06] animate-reveal-up" style={{ animationDelay: '160ms' }}>
     <span className="text-[11px] text-white/45">Read</span>
     <span className="text-[12px] font-mono text-white/70">241</span>
   </div>
-  <div className="flex justify-between items-center pt-1">
+  <div className="flex justify-between items-center pt-1 animate-reveal-up" style={{ animationDelay: '240ms' }}>
     <span className="text-[11px] font-semibold text-white/70">Acknowledged</span>
     <span className="text-[14px] font-bold font-mono" style={{ color }}>97%</span>
   </div>
 </div>
 
           <div className="h-1 rounded-full bg-white/[0.06] overflow-hidden">
-            <div className="h-full rounded-full bg-white/30" style={{ width: '97%' }} />
+            <div className="h-full rounded-full bg-white/30 bar-fill" style={{ width: live ? '97%' : '0%' }} />
           </div>
           <p className="text-[10px] text-white/30 text-center">Delivery in progress · est. completion 47s</p>
         </div>
@@ -1158,10 +1212,12 @@ const PillarsSection = () => {
             <span className="w-8 h-px bg-[#E05C4A]" />
             <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#E05C4A]">The Platform Suite</span>
           </div>
-          <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight text-white leading-[1.05] text-balance">
-            One infrastructure. <br className="hidden md:block"/>
-            <span className="font-serif italic font-normal text-white/50">Three enterprise pillars.</span>
-          </h2>
+        <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight text-white leading-[1.05] text-balance">
+  The complete platform for{' '}
+  <span className="font-serif italic font-normal text-white/90">
+    workforce management.
+  </span>
+</h2>
         </div>
 
         {/* Main Split Layout */}
@@ -1177,13 +1233,20 @@ const PillarsSection = () => {
                   <button
                     key={p.key}
                     onClick={() => setActivePillar(idx)}
-                    className="group w-full text-left py-4 pl-4 border-l-2 transition-all duration-500 flex flex-col gap-1"
-                    style={{ borderColor: isActive ? p.color : 'rgba(255,255,255,0.08)' }}
+                    className="group relative w-full text-left py-4 pl-4 border-l-2 border-transparent transition-all duration-500 flex flex-col gap-1"
+                    style={{ transform: isActive ? 'translateX(2px)' : 'translateX(0)' }}
                   >
+                    <span
+                      className="absolute left-[-2px] top-0 bottom-0 w-[2px] transition-all duration-500 ease-out"
+                      style={{
+                        background: isActive ? p.color : 'rgba(255,255,255,0.08)',
+                        transform: isActive ? 'scaleY(1)' : 'scaleY(1)',
+                      }}
+                    />
                     <span className={`text-[10px] font-mono tracking-widest transition-colors duration-500 ${isActive ? 'text-white/50' : 'text-white/20'}`}>
                       0{idx + 1}
                     </span>
-                    <span className={`text-[15px] font-semibold tracking-tight transition-colors duration-500 ${isActive ? 'text-white' : 'text-white/30 group-hover:text-white/60'}`}>
+                    <span className={`text-[15px] font-semibold tracking-tight transition-all duration-500 ${isActive ? 'text-white' : 'text-white/30 group-hover:text-white/60'}`}>
                       {p.title}
                     </span>
                   </button>
@@ -1196,7 +1259,7 @@ const PillarsSection = () => {
           <div className="relative">
             <div className="w-full h-px bg-white/10 mb-10 md:mb-14" />
 
-            <div key={pillar.key} className="animate-fade-in" style={{ animationDuration: '400ms' }}>
+            <div key={pillar.key} className="animate-slide-in-right">
               {/* Header Row */}
               <div className="flex items-start justify-between mb-8">
                 <div className="flex flex-col gap-4">
@@ -1213,7 +1276,7 @@ const PillarsSection = () => {
               </div>
 
               {/* Description */}
-              <p className="text-lg md:text-xl text-white/60 leading-relaxed font-light max-w-2xl mb-12">
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed font-light max-w-4xl mb-12">
                 {pillar.description}
               </p>
 
@@ -1225,13 +1288,14 @@ const PillarsSection = () => {
                   {pillar.points.map((point, i) => (
                     <div 
                       key={i} 
-                      className="flex items-start gap-4 py-4 border-b border-white/[0.06]"
+                      className="flex items-start gap-4 py-4 border-b border-white/[0.06] animate-reveal-up"
+                      style={{ animationDelay: `${i * 80}ms` }}
                     >
                       <span 
                         className="mt-2 h-1 w-1 rounded-full shrink-0" 
                         style={{ backgroundColor: pillar.color }} 
                       />
-                      <span className="text-[14px] text-white/70 leading-snug font-light">
+                      <span className="text-[14px] text-white/90 leading-snug font-light">
                         {point}
                       </span>
                     </div>
@@ -1239,16 +1303,18 @@ const PillarsSection = () => {
                 </div>
 
                 {/* Premium Product Visual */}
-                <div className="relative w-full md:w-[420px] lg:w-[460px] shrink-0">
+                <div className="relative w-full md:w-[420px] lg:w-[460px] shrink-0 animate-reveal-up" style={{ animationDelay: '120ms' }}>
                   <PillarVisual type={pillar.visual} color={pillar.color} />
                 </div>
               </div>
 
               {/* Quiet in-panel CTA — per-pillar, hairline, no box */}
-              <a
-                href={pillar.cta.href}
-                className="group mt-14 pt-8 border-t border-white/[0.08] inline-flex items-center gap-3 text-[14px] font-semibold tracking-tight text-white/60 hover:text-white transition-colors duration-300"
-              >
+           <a
+  href={pillar.cta.href}
+  target={pillar.cta.external ? '_blank' : undefined}
+  rel={pillar.cta.external ? 'noopener noreferrer' : undefined}
+  className="group mt-14 pt-8 border-t border-white/[0.08] inline-flex items-center gap-3 text-[14px] font-semibold tracking-tight text-white/60 hover:text-white transition-colors duration-300"
+>
                 <span
                   className="w-6 h-px transition-all duration-500 group-hover:w-10"
                   style={{ background: pillar.color }}
@@ -1273,7 +1339,7 @@ const IntegrationSteps = () => (
       {/* Editorial header — two columns so the eye travels horizontally */}
       <div className="grid lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-24 items-end mb-20 md:mb-28">
         <div className="reveal">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/40">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/70">
             How it works
           </span>
           <h2 className="mt-5 font-sans text-4xl md:text-5xl lg:text-[72px] font-semibold tracking-[-0.03em] text-ink leading-[0.98] text-balance">
@@ -1283,9 +1349,9 @@ const IntegrationSteps = () => (
             </span>
           </h2>
         </div>
-        <p className="reveal text-lg md:text-xl text-ink/70 leading-[1.6] max-w-md lg:pb-3">
-          Import your people, switch on the modules you need, and go live — usually before your next payroll cycle.
-        </p>
+      <p className="reveal text-[19.5px] text-ink/70 leading-[1.6] max-w-2xl lg:pb-3">
+  Connect your systems, configure the modules you need, and go live, usually before your next payroll cycle.
+</p>
       </div>
 
       {/* Three steps — editorial, numbered, no icons, staggered */}
@@ -1302,7 +1368,7 @@ const IntegrationSteps = () => (
             {/* Hairline top + big serif numeral */}
             <div className="border-t border-ink/[0.12] pt-8">
               <div className="flex items-baseline gap-5 mb-8">
-                <span className="font-serif italic text-[64px] md:text-[80px] text-ink/20 leading-none tabular-nums">
+                <span className="font-serif italic text-[64px] md:text-[80px] text-black/90 leading-none tabular-nums">
                   {step.number.replace('0', '')}
                 </span>
                 <span className="font-mono text-[10px] font-medium tracking-widest text-ink/35 pb-3">
@@ -1313,9 +1379,9 @@ const IntegrationSteps = () => (
               <h3 className="font-sans text-xl md:text-[22px] font-semibold text-ink leading-snug mb-4 text-balance tracking-[-0.01em]">
                 {step.title}
               </h3>
-              <p className="text-[15px] text-ink/85 leading-[1.7]">
-                {step.description}
-              </p>
+            <p className="text-[16px] leading-[1.7]" style={{ color: '#000' }}>
+  {step.description}
+</p>
             </div>
           </li>
         ))}
@@ -1323,17 +1389,21 @@ const IntegrationSteps = () => (
 
       {/* Closing strip — same treatment as before, but aligned to the new rhythm */}
       <div className="reveal mt-32 md:mt-40 pt-10 border-t border-ink/[0.12] flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-        <p className="text-[15px] text-ink/75 leading-[1.7] max-w-2xl">
-          Already running another platform? So were many of our clients. When{' '}
-          <span className="text-ink font-medium">WastePlan</span> switched to a competitor, their employees brought Jem back within six weeks.
-        </p>
-        <Button
-          variant="outline"
-          icon="arrow"
-          className="shrink-0 border-ink/15 hover:border-ink/30"
-        >
-          Book a meeting
-        </Button>
+      <p className="text-[16px] leading-[1.7] max-w-2xl" style={{ color: '#000' }}>
+  Already running another platform? So were many of our clients. When{' '}
+  <span className="font-medium" style={{ color: '#E05C4A' }}>WastePlan</span> switched to a competitor, their employees brought Jem back within six weeks.
+</p>
+    <a
+  href="https://www.jemhr.com/contact/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group shrink-0 inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 ease-out active:scale-95 border border-ink/15 text-ink bg-transparent hover:bg-ink/5 hover:border-ink/30"
+>
+  <span className="relative z-10 flex items-center gap-2">
+    Book a meeting
+    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+  </span>
+</a>
       </div>
     </div>
   </Section>
@@ -1349,12 +1419,14 @@ const SocialProof = () => (
       <div className="reveal max-w-3xl mb-20 md:mb-28">
         <div className="inline-flex items-center gap-3 mb-6">
           <span className="w-8 h-px bg-coral" />
-          <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-coral">Client Stories</span>
+          <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-coral">Client Story</span>
         </div>
-        <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight text-white leading-[1.05] text-balance">
-          Proof, not promises. <br className="hidden md:block" />
-          <span className="font-serif italic font-normal text-white/50">From the people who run it.</span>
-        </h2>
+      <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-semibold tracking-tight text-white leading-[1.05] text-balance">
+  How Meridian transformed{' '}
+  <span className="font-serif italic font-normal text-white/80">
+    access across its workforce.
+  </span>
+</h2>
       </div>
 
       {/* Split panel */}
@@ -1370,9 +1442,16 @@ const SocialProof = () => (
           </div>
 
           <div className="mt-12 flex items-center gap-4 pt-8 border-t border-white/10">
-            <div className="w-11 h-11 rounded-full bg-white/[0.06] border border-white/10 flex items-center justify-center text-white/80 font-semibold text-sm">
-              {siteData.testimonial.name.charAt(0)}
-            </div>
+          
+            <img
+              src="/images/avatar-karen-hammond.png"
+              alt="Karen Hammond"
+              className="w-11 h-11 rounded-full object-cover border border-white/10"
+              loading="lazy"
+              draggable={false}
+            />
+           
+           
             <div>
               <p className="text-[14px] font-semibold text-white">{siteData.testimonial.name}</p>
               <p className="text-[12px] text-white/45">{siteData.testimonial.role}</p>
@@ -1395,9 +1474,9 @@ const SocialProof = () => (
             {siteData.caseStudy.sector}
           </p>
 
-          <p className="text-[15px] leading-relaxed text-white/60 mb-12 max-w-xl">
-            {siteData.caseStudy.body}
-          </p>
+          <p className="text-[15px] text-white/80 mb-12 max-w-xl" style={{ lineHeight: 1.8 }}>
+  {siteData.caseStudy.body}
+</p>
 
           <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
             {siteData.caseStudy.metrics.map((metric, idx) => (
@@ -1437,7 +1516,7 @@ const WhyJemAndSecurity = () => (
       {/* Part 1 — Mission. Editorial headline, tight body, one quiet stat. */}
       <div className="reveal grid lg:grid-cols-[1.35fr_1fr] gap-12 lg:gap-24 items-start mb-24 md:mb-32">
         <div>
-          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/40">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-black/80">
             Why we exist
           </span>
           <h2 className="mt-6 font-sans text-4xl md:text-5xl lg:text-[64px] font-semibold tracking-[-0.03em] text-ink leading-[1.02] text-balance">
@@ -1449,11 +1528,21 @@ const WhyJemAndSecurity = () => (
         </div>
 
         <div className="lg:pt-4">
-          <p className="text-lg md:text-xl text-ink/75 leading-[1.65] max-w-xl">
-            75% of South African workers are deskless. They're locked out of the tools built for office teams, and priced out of fair financial services. Jem meets them where they already are — and we're scaling that infrastructure across the continent.
+          <p className="text-lg md:text-xl text-black/90 leading-[1.65] max-w-xl">
+            75% of South African workers are deskless. Jem gives them a direct way to access payslips, manage leave, communicate with their employer, access earned pay, and use financial wellness services, all through WhatsApp.
           </p>
           <div className="mt-10">
-            <Button variant="outline" icon="arrow">Read Our Full Story</Button>
+  <a
+  href="https://www.jemhr.com/about/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-6 py-3.5 text-sm font-semibold transition-all duration-300 ease-out active:scale-95 border border-ink/20 text-ink bg-transparent hover:bg-ink/5 hover:border-ink/40"
+>
+  <span className="relative z-10 flex items-center gap-2">
+    Read Our Full Story
+    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+  </span>
+</a>
           </div>
         </div>
       </div>
@@ -1466,15 +1555,15 @@ const WhyJemAndSecurity = () => (
           <div>
             <div className="flex items-center gap-3 mb-5">
               <Shield className="w-[18px] h-[18px] text-ink/60" strokeWidth={1.5} />
-              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/40">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/80">
                 Enterprise security
               </span>
             </div>
             <h3 className="font-sans text-2xl md:text-3xl font-semibold text-ink leading-tight tracking-[-0.01em] text-balance">
               Infrastructure your board signs off on.
             </h3>
-            <p className="mt-4 text-[15px] text-ink/55 leading-[1.7] max-w-sm">
-              Bank-grade by default. Certified, compliant, and audited — for the two departments that worry most.
+            <p className="mt-4 text-[15px] text-black/85 leading-[1.7] max-w-sm">
+              Built to meet enterprise security and compliance requirements from day one.
             </p>
           </div>
 
@@ -1483,7 +1572,8 @@ const WhyJemAndSecurity = () => (
             {siteData.securityBadges.map((badge, idx) => (
               <li
                 key={idx}
-                className="grid grid-cols-[40px_1fr_auto] items-center gap-6 py-6 group"
+                className="grid grid-cols-[40px_1fr_auto] items-center gap-6 py-6 group reveal"
+                style={{ transitionDelay: `${idx * 70}ms` }}
               >
                 <span className="font-mono text-[11px] font-medium tracking-widest text-ink/35 group-hover:text-ink/60 transition-colors">
                   0{idx + 1}
@@ -1511,7 +1601,7 @@ const CTA = () => (
     className="relative overflow-hidden py-28 md:py-40"
     style={{ backgroundColor: '#051d2e' }}
   >
-    <div className="relative max-w-4xl mx-auto px-6 md:px-12 text-center">
+    <div className="relative max-w-5xl mx-auto px-6 md:px-12 text-center">
 
       {/* Eyebrow — same hairline pattern as Pillars and SocialProof */}
       <div className="reveal inline-flex items-center gap-3 mb-8">
@@ -1523,27 +1613,41 @@ const CTA = () => (
       </div>
 
       {/* Headline — same editorial pattern used throughout the page */}
-      <h2 className="reveal font-sans text-4xl md:text-5xl lg:text-[64px] font-semibold text-white tracking-[-0.03em] leading-[1.02] text-balance mb-8">
-        Watch your frontline{' '}
-        <span className="font-serif italic font-normal text-white/60">
-          fall into place.
-        </span>
-      </h2>
+    <h2 className="reveal font-sans text-4xl md:text-5xl lg:text-[64px] font-semibold text-white tracking-[-0.03em] leading-[1.02] text-balance mb-8">
+  Give your entire workforce{' '}
+  <span className="font-serif italic font-normal text-white/90">
+    one place to connect.
+  </span>
+</h2>
 
-      <p className="reveal text-lg md:text-xl text-white/55 leading-[1.65] font-light max-w-2xl mx-auto mb-12">
-        Book a demo and we'll show you what's possible when you run your deskless teams with Jem.
+      <p className="reveal text-lg md:text-xl text-white/75 leading-[1.85] font-light max-w-5xl mx-auto mb-12">
+        See how Jem brings communication, HR services, and employee benefits together through WhatsApp, with the security and infrastructure your organisation needs to scale.
       </p>
 
-      {/* Action row */}
-      <div className="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
-        <Button variant="primary" icon="arrow" className="w-full sm:w-auto px-8 py-4 text-base">
-          Book a demo
-        </Button>
-        <button className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/85 hover:text-white border border-white/20 hover:border-white/40 transition-colors">
-          <PlayCircle className="w-4 h-4" />
-          See Jem in action
-        </button>
-      </div>
+     {/* Action row */}
+<div className="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+  <a
+    href="https://www.jemhr.com/contact/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 text-base font-semibold transition-all duration-300 ease-out active:scale-95 bg-coral text-white shadow-md hover:bg-coral-dark hover:shadow-lg hover:-translate-y-0.5"
+  >
+    <span className="relative z-10 flex items-center gap-2">
+      Book a demo
+      <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+    </span>
+  </a>
+
+  <a
+    href="https://www.jemhr.com/product/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/85 hover:text-white border border-white/20 hover:border-white/40 transition-colors"
+  >
+    <PlayCircle className="w-4 h-4" />
+    See Jem in action
+  </a>
+</div>
     </div>
 
     {/* Hairline divider separating CTA from footer */}
