@@ -1,11 +1,12 @@
 export const navLinks = [
-  { label: 'Who we serve', to: '#who-we-serve' },
+  { label: 'Solutions', to: '#who-we-serve' },
   { label: 'Product', to: '#product' },
-  { label: 'Customers', to: '#customers' },
+  { label: 'Case Study', to: '#customers' },
   { label: 'About', to: '#about' },
   { label: 'Security', to: '#security' },
   { label: 'Contact', to: '#contact' },
 ]
+
 
 
 export const clientNames = [
