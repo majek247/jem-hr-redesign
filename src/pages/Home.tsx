@@ -1196,7 +1196,27 @@ const PillarVisual = ({ type, color }) => {
 
 const PillarsSection = () => {
   const [activePillar, setActivePillar] = useState(0);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef(null);
   const pillar = siteData.pillars[activePillar];
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setInView(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0, rootMargin: '0px 0px -30% 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section 
@@ -1221,7 +1241,7 @@ const PillarsSection = () => {
         </div>
 
         {/* Main Split Layout */}
-        <div className="grid lg:grid-cols-[260px_1fr] gap-12 lg:gap-20">
+        <div ref={sectionRef} className="grid lg:grid-cols-[260px_1fr] gap-12 lg:gap-20">
           
           {/* LEFT — Index (Tab Switcher) */}
           <div className="hidden lg:block">
@@ -1259,7 +1279,7 @@ const PillarsSection = () => {
           <div className="relative">
             <div className="w-full h-px bg-white/10 mb-10 md:mb-14" />
 
-            <div key={pillar.key} className="animate-slide-in-right">
+            <div key={inView ? pillar.key : 'pending'} className={inView ? 'animate-slide-in-right' : 'opacity-0'}>
               {/* Header Row */}
               <div className="flex items-start justify-between mb-8">
                 <div className="flex flex-col gap-4">
