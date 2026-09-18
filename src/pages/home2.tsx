@@ -9,7 +9,7 @@ import {
 
 const CustomStyles = () => (
   <style dangerouslySetInnerHTML={{__html: `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
     
     :root {
       --coral: #E05C4A;
@@ -28,8 +28,8 @@ const CustomStyles = () => (
       scroll-behavior: smooth;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--paper);
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
@@ -37,9 +37,7 @@ const CustomStyles = () => (
       overflow-x: hidden;
     }
 
-    .font-serif {
-      font-family: 'Playfair Display', serif;
-    }
+  
 
     /* Complex Animations */
     @keyframes float {
@@ -390,6 +388,9 @@ const audienceVisuals = [
   }
 ];
 
+
+
+
 const AudiencePreview = ({ visual }) => {
   if (!visual) return null;
 
@@ -702,50 +703,97 @@ const ChatMockup = () => {
 
 
 const Hero = () => (
-  <Section className="pt-16 md:pt-24 pb-16 lg:pb-32 overflow-hidden relative">
-    {/* Background Grid */}
-    <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
-    
-    <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-8 items-center relative z-10">
-      <div className="reveal">
-        <Badge className="mb-6">The #1 Platform for Frontline Workers in Africa</Badge>
-        
-        <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-ink leading-[1.05] text-balance">
-          Africa's deskless workforce, <span className="font-serif italic font-normal text-coral">finally seen.</span>
-        </h1>
-        
-        <p className="mt-6 max-w-xl text-lg md:text-xl text-ink/65 leading-relaxed">
-          Jem turns WhatsApp into an enterprise-grade HR and financial-wellbeing platform for the people who keep your business running. <strong>No app to download, nothing to train.</strong>
-        </p>
-        
-        <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          <Button variant="primary" icon="arrow" className="text-base py-4 px-8">
-            Book an Executive Demo
-          </Button>
-          <Button variant="white" icon="play" className="text-base py-4 px-8">
-            See Product Tour
-          </Button>
-        </div>
-        
-        <div className="mt-12 flex items-center gap-6 pt-8 border-t border-ink/10">
-          <div className="flex -space-x-3">
-            {[1,2,3,4].map((i) => (
-              <div key={i} className={`w-10 h-10 rounded-full border-2 border-white bg-ink flex items-center justify-center shadow-sm z-[${10-i}]`}>
-                <span className="text-white text-[10px] font-bold">HR</span>
-              </div>
-            ))}
+  <section
+    id="hero"
+    className="relative overflow-hidden"
+    style={{ backgroundColor: '#051d2e' }}
+  >
+    {/* Subtle grid */}
+    <div className="absolute inset-0 bg-grid-pattern opacity-[0.06] pointer-events-none" />
+
+    {/* Single coral glow behind the phone */}
+    <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-coral/[0.06] blur-[140px] pointer-events-none" />
+
+    <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+
+      {/* Main hero grid */}
+      <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-20 items-center pt-10 md:pt-14 pb-10 md:pb-14">
+
+        {/* LEFT — narrative */}
+        <div className="max-w-xl">
+          {/* Eyebrow */}
+          <div className="reveal inline-flex items-center gap-3 mb-7">
+            <span className="w-8 h-px bg-coral" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-coral">
+              Enterprise platform · Africa
+            </span>
           </div>
-          <p className="text-sm font-medium text-ink/60 max-w-[200px] leading-snug">
-            Trusted by 200+ employers and <strong className="text-ink">250,000+ deskless workers</strong>.
+
+          {/* Headline */}
+          <h1 className="reveal font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-semibold tracking-[-0.03em] text-white leading-[1.04] text-balance">
+            The platform for{' '}
+            <span className="font-serif italic font-normal text-white/60">
+              the deskless workforce.
+            </span>
+          </h1>
+
+          {/* Sub */}
+          <p className="reveal mt-6 text-lg md:text-xl text-white/60 leading-[1.6] font-light">
+            Reach, engage, and reward every frontline worker — right inside WhatsApp. No app to download. Nothing to train.
           </p>
+
+          {/* Actions */}
+          <div className="reveal mt-10 flex flex-col sm:flex-row gap-3">
+            <Button variant="primary" icon="arrow" className="text-base py-4 px-8">
+              Book an executive demo
+            </Button>
+            <button className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/85 hover:text-white border border-white/20 hover:border-white/40 transition-colors">
+              <PlayCircle className="w-4 h-4" />
+              See the product tour
+            </button>
+          </div>
+        </div>
+
+        {/* RIGHT — hero image, larger, vertically centered */}
+        <div className="reveal reveal-delay-2 flex justify-center lg:justify-end">
+          <div className="relative w-full max-w-[640px] lg:max-w-none lg:w-[110%] px-4">
+            <img
+              src="/images/jemherogit.png"
+              alt="Jem platform — enterprise workforce management"
+              className="w-full h-auto block"
+              loading="eager"
+              draggable={false}
+            />
+          </div>
         </div>
       </div>
 
-      <div className="relative mt-10 lg:mt-0 flex justify-center lg:justify-end reveal reveal-delay-2">
-        <ChatMockup />
+      {/* Bottom strip — logo marquee, on the dark bg */}
+      <div className="reveal relative pt-12 md:pt-14 pb-20 md:pb-24 border-t border-white/[0.08]">
+
+        {/* Logo marquee, inline on the dark bg */}
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/35 mb-6">
+          Trusted by Africa's leading enterprises
+        </p>
+        <div className="relative overflow-hidden">
+          {/* Edge fades on navy */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #051d2e, rgba(5,29,46,0))' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #051d2e, rgba(5,29,46,0))' }} />
+
+          <div className="flex animate-marquee items-center gap-16 md:gap-24">
+            {siteData.logos.map((logo, idx) => (
+              <span
+                key={idx}
+                className="text-xl md:text-2xl font-serif font-bold text-white/20 hover:text-white/50 transition-colors cursor-default whitespace-nowrap"
+              >
+                {logo}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
-  </Section>
+  </section>
 );
 
 const LogoMarquee = () => (
@@ -1485,7 +1533,6 @@ export default function App() {
  
         <main className="flex-grow">
           <Hero />
-          <LogoMarquee />
           <ExecReasons />
           <PillarsSection />
           <IntegrationSteps />

@@ -9,7 +9,7 @@ import {
 
 const CustomStyles = () => (
   <style dangerouslySetInnerHTML={{__html: `
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
     
     :root {
       --coral: #E05C4A;
@@ -28,8 +28,8 @@ const CustomStyles = () => (
       scroll-behavior: smooth;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--paper);
       color: var(--ink);
       -webkit-font-smoothing: antialiased;
@@ -37,9 +37,7 @@ const CustomStyles = () => (
       overflow-x: hidden;
     }
 
-    .font-serif {
-      font-family: 'Playfair Display', serif;
-    }
+  
 
     /* Complex Animations */
     @keyframes float {
@@ -154,10 +152,50 @@ const siteData = {
     { name: 'Customers', href: '#customers' },
     { name: 'Security', href: '#security' },
   ],
-  logos: [
-    "Shoprite", "Mr Price", "Nando's", "Woolworths", "TFG", "Spar", "Clicks", "Pick n Pay",
-    "Shoprite", "Mr Price", "Nando's", "Woolworths", "TFG", "Spar", "Clicks", "Pick n Pay"
-  ],
+logos: [
+  { name: 'Capital Hotel',      src: '/images/logos/capital-hotel-navy.png' },
+  { name: 'City Logistics',     src: '/images/logos/city-logistics-navy.png' },
+  { name: 'Defy',               src: '/images/logos/defy-navy.png' },
+  { name: 'Edgars',             src: '/images/logos/edgars-navy.png' },
+  { name: 'Illovo',             src: '/images/logos/illovo-navy.png' },
+  { name: 'KFC',                src: '/images/logos/kfc-navy.png' },
+  { name: 'Leroy Merlin',       src: '/images/logos/leroy-merlin-navy.png' },
+  { name: 'Meridian',           src: '/images/logos/meridian-navy.png' },
+  { name: 'Oryx',               src: '/images/logos/oryx-navy.png' },
+  { name: 'Seattle Coffee',     src: '/images/logos/seattle-coffee-navy.png' },
+  { name: 'Servest',            src: '/images/logos/servest-navy.png' },
+  { name: 'Spier',              src: '/images/logos/spier-navy.png' },
+  { name: 'Stallion Security',  src: '/images/logos/stallion-security-navy.png' },
+  { name: 'Swissport',          src: '/images/logos/swissport-navy.png' },
+  { name: 'Tharisa',            src: '/images/logos/tharisa-navy.png' },
+  { name: 'Tiger Wheel & Tyre', src: '/images/logos/tiger-wheel-navy.png' },
+  { name: 'Titanium Securitas', src: '/images/logos/titanium-securitas-navy.png' },
+  { name: 'Truda',              src: '/images/logos/truda-navy.png' },
+  { name: 'Twizza',             src: '/images/logos/twizza-navy.png' },
+  { name: 'Wasteplan',          src: '/images/logos/wasteplan-navy.png' },
+
+  // Duplicate set — required for seamless marquee loop
+  { name: 'Capital Hotel',      src: '/images/logos/capital-hotel-navy.png' },
+  { name: 'City Logistics',     src: '/images/logos/city-logistics-navy.png' },
+  { name: 'Defy',               src: '/images/logos/defy-navy.png' },
+  { name: 'Edgars',             src: '/images/logos/edgars-navy.png' },
+  { name: 'Illovo',             src: '/images/logos/illovo-navy.png' },
+  { name: 'KFC',                src: '/images/logos/kfc-navy.png' },
+  { name: 'Leroy Merlin',       src: '/images/logos/leroy-merlin-navy.png' },
+  { name: 'Meridian',           src: '/images/logos/meridian-navy.png' },
+  { name: 'Oryx',               src: '/images/logos/oryx-navy.png' },
+  { name: 'Seattle Coffee',     src: '/images/logos/seattle-coffee-navy.png' },
+  { name: 'Servest',            src: '/images/logos/servest-navy.png' },
+  { name: 'Spier',              src: '/images/logos/spier-navy.png' },
+  { name: 'Stallion Security',  src: '/images/logos/stallion-security-navy.png' },
+  { name: 'Swissport',          src: '/images/logos/swissport-navy.png' },
+  { name: 'Tharisa',            src: '/images/logos/tharisa-navy.png' },
+  { name: 'Tiger Wheel & Tyre', src: '/images/logos/tiger-wheel-navy.png' },
+  { name: 'Titanium Securitas', src: '/images/logos/titanium-securitas-navy.png' },
+  { name: 'Truda',              src: '/images/logos/truda-navy.png' },
+  { name: 'Twizza',             src: '/images/logos/twizza-navy.png' },
+  { name: 'Wasteplan',          src: '/images/logos/wasteplan-navy.png' },
+],
   pillars: [
     {
       key: 'comm',
@@ -332,208 +370,202 @@ const siteData = {
 
 
 // Per-audience "see it in action" preview panel content
+
 const audienceVisuals = [
   {
-    // CHRO — Engagement Dashboard
-    kind: 'dashboard',
+    // CHRO
     title: 'Pulse Survey · Sandton Branch',
     subtitle: 'Q4 Frontline Sentiment',
+    tag: 'Live',
     accent: '#E05C4A',
-    stat: { value: '81%', label: 'Response rate' },
-    bars: [
+    headlineMetric: { value: '81%', label: 'Response rate' },
+    rows: [
       { label: 'Feeling heard', value: 84 },
       { label: 'Shift satisfaction', value: 76 },
       { label: 'Manager support', value: 91 },
       { label: 'Would recommend', value: 79 }
     ],
-    chips: ['+12% MoM', '1,240 responses', 'Live']
+    footerStats: [
+      { value: '+12%', label: 'MoM change' },
+      { value: '1,240', label: 'Responses' },
+      { value: '92%', label: 'Coverage' }
+    ]
   },
   {
-    // CFO — Cost breakdown
-    kind: 'finance',
+    // CFO
     title: 'FY Cost Breakdown',
     subtitle: 'Per 5,000 deskless staff',
+    tag: 'Updated today',
     accent: '#3A6B5D',
-    rows: [
+    headlineMetric: { value: 'R1.13M', label: 'Annual net saving' },
+    costRows: [
       { label: 'Payslip printing & postage', before: 'R 720,000', after: 'R 0' },
       { label: 'SMS broadcast credits', before: 'R 340,000', after: 'R 96,000' },
       { label: 'HR admin overtime', before: 'R 210,000', after: 'R 42,000' }
-    ],
-    total: { value: 'R 1.13M', label: 'Annual net saving' }
+    ]
   },
   {
-    // COO — Broadcast composer
-    kind: 'broadcast',
+    // COO
     title: 'Broadcast Composer',
-    subtitle: 'Targeting: Sandton · Night Shift · 248 recipients',
+    subtitle: 'Sandton · Night Shift · 248 recipients',
+    tag: 'Sending',
     accent: '#E05C4A',
-    message: '⚠️ Reminder: New safety protocol effective Monday. Please acknowledge by 6pm.',
-    stats: [
+    message: 'Reminder: New safety protocol effective Monday. Please acknowledge by 6pm.',
+    footerStats: [
       { value: '248', label: 'Sent' },
       { value: '241', label: 'Read' },
       { value: '97%', label: 'Acknowledged' }
     ]
   },
   {
-    // CIO — Integration & security
-    kind: 'security',
+    // CIO
     title: 'System Integrations',
     subtitle: 'All connections healthy',
+    tag: 'Synced',
     accent: '#0F172A',
-    integrations: [
+    statusItems: [
       { name: 'SAP SuccessFactors', status: 'Connected' },
       { name: 'Sage VIP Payroll', status: 'Connected' },
       { name: 'Workday HRIS', status: 'Connected' },
       { name: 'Azure AD / SSO', status: 'Connected' }
     ],
-    badges: ['AES-256', 'ISO 27001', 'POPIA', 'SOC 2']
+    certRow: ['AES-256', 'ISO 27001', 'POPIA', 'SOC 2']
   }
 ];
 
+
 const AudiencePreview = ({ visual }) => {
   if (!visual) return null;
+  const accent = visual.accent;
 
-  // Each kind renders a distinct, enterprise-grade mockup panel
   return (
-    <div className="relative">
-
-      <div className="relative rounded-xl bg-white border border-ink/[0.10] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_12px_32px_-16px_rgba(15,23,42,0.10)] overflow-hidden">
-        {/* Window chrome */}
-        <div className="flex items-center gap-3 px-5 py-3.5 border-b border-ink/[0.06] bg-white">
-          <div className="flex gap-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-ink/10" />
-            <span className="w-2.5 h-2.5 rounded-full bg-ink/10" />
-            <span className="w-2.5 h-2.5 rounded-full bg-ink/10" />
-          </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-[13px] font-semibold text-ink truncate">{visual.title}</p>
-            <p className="text-[11px] text-ink/45 truncate">{visual.subtitle}</p>
-          </div>
-          <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-palm/10 text-[10px] font-bold uppercase tracking-wider text-palm">
-            <span className="w-1.5 h-1.5 rounded-full bg-palm animate-pulse" /> Live
-          </span>
+    <div className="rounded-2xl border border-ink/[0.08] bg-white overflow-hidden shadow-[0_1px_2px_rgba(15,23,42,0.04),0_20px_48px_-24px_rgba(15,23,42,0.14)]">
+      {/* Module header — labelled, no fake chrome */}
+      <div className="flex items-center justify-between px-6 py-4 border-b border-ink/[0.07]">
+        <div className="min-w-0">
+          <p className="text-[13px] font-bold text-ink truncate">{visual.title}</p>
+          <p className="text-[11px] text-ink/45 truncate">{visual.subtitle}</p>
         </div>
+        <span className="shrink-0 inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" style={{ color: accent, background: `${accent}14` }}>
+          <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: accent }} />
+          {visual.tag}
+        </span>
+      </div>
 
-        {/* Body */}
-        <div className="p-6 md:p-7">
-          {/* CHRO — Pulse survey bars */}
-          {visual.kind === 'dashboard' && (
-            <div className="animate-fade-in">
-              <div className="flex items-baseline justify-between mb-6">
-                <div>
-                  <p className="text-[11px] font-bold uppercase tracking-widest text-ink/40 mb-1">Overall sentiment</p>
-                  <p className="font-serif text-4xl italic text-ink">{visual.stat.value}</p>
-                </div>
-                <p className="text-xs font-semibold text-ink/50">{visual.stat.label}</p>
+      <div className="p-6">
+        {/* CHRO — headline metric + bars */}
+        {visual.rows && (
+          <>
+            {visual.headlineMetric && (
+              <div className="flex items-end justify-between mb-6">
+                <p className="text-[40px] font-bold tabular-nums leading-none text-ink">{visual.headlineMetric.value}</p>
+                <span className="text-[12px] font-semibold text-ink/50 mb-1.5">{visual.headlineMetric.label}</span>
               </div>
-              <div className="space-y-4">
-                {visual.bars.map((bar, i) => (
+            )}
+            <div className="space-y-4">
+              {visual.rows.map((row, i) => (
+                <div key={i}>
+                  <div className="flex justify-between text-[12.5px] mb-1.5">
+                    <span className="font-medium text-ink/70">{row.label}</span>
+                    <span className="font-bold tabular-nums text-ink">{row.value}%</span>
+                  </div>
+                  <div className="h-2.5 rounded-full bg-ink/[0.06] overflow-hidden">
+                    <div className="h-full rounded-full" style={{ width: `${row.value}%`, background: accent }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+            {visual.footerStats && (
+              <div className={`grid grid-cols-${visual.footerStats.length} gap-3 mt-6 pt-5 border-t border-ink/[0.07]`}>
+                {visual.footerStats.map((s, i) => (
                   <div key={i}>
-                    <div className="flex justify-between text-[12px] mb-1.5">
-                      <span className="font-medium text-ink/70">{bar.label}</span>
-                      <span className="font-bold text-ink tabular-nums">{bar.value}%</span>
-                    </div>
-                    <div className="h-2 rounded-full bg-ink/[0.06] overflow-hidden">
-                      <div
-                        className="h-full rounded-full transition-all duration-700"
-                        style={{ width: `${bar.value}%`, background: visual.accent }}
-                      />
-                    </div>
+                    <p className="text-[18px] font-bold tabular-nums text-ink">{s.value}</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-ink/45">{s.label}</p>
                   </div>
                 ))}
               </div>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {visual.chips.map((chip, i) => (
-                  <span key={i} className="px-2.5 py-1 rounded-md bg-[#FAF7F4] text-[11px] font-semibold text-ink/60">{chip}</span>
-                ))}
-              </div>
-            </div>
-          )}
+            )}
+          </>
+        )}
 
-          {/* CFO — Cost breakdown */}
-          {visual.kind === 'finance' && (
-            <div className="animate-fade-in">
-              <div className="grid grid-cols-[1fr_auto_auto] gap-x-3 text-[10px] font-bold uppercase tracking-widest text-ink/40 pb-3 border-b border-ink/[0.06]">
-                <span>Line item</span>
-                <span className="text-right">Before</span>
-                <span className="text-right">With Jem</span>
-              </div>
-              <div className="divide-y divide-ink/[0.05]">
-                {visual.rows.map((row, i) => (
-                  <div key={i} className="grid grid-cols-[1fr_auto_auto] gap-x-3 items-center py-4">
-                    <span className="text-[13px] font-medium text-ink/80">{row.label}</span>
-                    <span className="text-[12px] text-ink/45 line-through tabular-nums">{row.before}</span>
-                    <span className="text-[13px] font-bold tabular-nums" style={{ color: visual.accent }}>{row.after}</span>
-                  </div>
-                ))}
-              </div>
-              <div
-                className="mt-4 rounded-xl p-5 flex items-center justify-between"
-                style={{ background: `${visual.accent}0F` }}
-              >
-                <div>
-                  <p className="text-[10px] font-bold uppercase tracking-widest text-ink/50 mb-1">{visual.total.label}</p>
-                  <p className="font-serif text-3xl italic tabular-nums" style={{ color: visual.accent }}>{visual.total.value}</p>
+        {/* CFO — cost table + net saving */}
+        {visual.costRows && (
+          <>
+            <div className="grid grid-cols-[1fr_auto_auto] gap-x-3 text-[10px] font-bold uppercase tracking-wide text-ink/40 pb-3 border-b border-ink/[0.07]">
+              <span>Line item</span><span className="text-right">Before</span><span className="text-right">With Jem</span>
+            </div>
+            <div className="divide-y divide-ink/[0.06]">
+              {visual.costRows.map((row, i) => (
+                <div key={i} className="grid grid-cols-[1fr_auto_auto] gap-x-3 items-center py-3.5">
+                  <span className="text-[13px] font-medium text-ink/80">{row.label}</span>
+                  <span className="text-[12px] text-ink/40 line-through tabular-nums">{row.before}</span>
+                  <span className="text-[13px] font-bold tabular-nums" style={{ color: accent }}>{row.after}</span>
                 </div>
-                <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: `${visual.accent}20` }}>
-                  <PieChart className="w-5 h-5" style={{ color: visual.accent }} />
+              ))}
+            </div>
+            <div className="mt-4 rounded-xl p-5 flex items-center justify-between" style={{ background: `${accent}0F` }}>
+              <div>
+                <p className="text-[10px] font-bold uppercase tracking-wide text-ink/50 mb-1">{visual.headlineMetric.label}</p>
+                <p className="text-[28px] font-bold tabular-nums" style={{ color: accent }}>{visual.headlineMetric.value}</p>
+              </div>
+              <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ background: `${accent}20` }}>
+                <PieChart className="w-5 h-5" style={{ color: accent }} />
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* COO — broadcast message + delivery stats */}
+        {visual.message && (
+          <>
+            <div className="rounded-xl border border-ink/[0.07] bg-slate-50/70 p-4 mb-5">
+              <p className="text-[10px] font-bold uppercase tracking-wide text-ink/40 mb-2">Message</p>
+              <p className="text-[14px] leading-relaxed text-ink font-medium">{visual.message}</p>
+            </div>
+            <div className="grid grid-cols-3 gap-3">
+              {visual.footerStats.map((s, i) => (
+                <div key={i} className="rounded-xl bg-white border border-ink/[0.07] p-4 text-center">
+                  <p className="text-[10px] font-bold uppercase tracking-wide text-ink/40 mb-1">{s.label}</p>
+                  <p className="text-[22px] font-bold tabular-nums" style={{ color: accent }}>{s.value}</p>
                 </div>
-              </div>
+              ))}
             </div>
-          )}
-
-          {/* COO — Broadcast composer */}
-          {visual.kind === 'broadcast' && (
-            <div className="animate-fade-in">
-              <div className="rounded-xl border border-ink/[0.06] bg-slate-50/60 p-4 mb-5">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-ink/40 mb-2">Message</p>
-                <p className="text-[14px] leading-relaxed text-ink">{visual.message}</p>
-              </div>
-              <div className="grid grid-cols-3 gap-3">
-                {visual.stats.map((s, i) => (
-                  <div key={i} className="rounded-xl bg-white border border-ink/[0.06] p-4 text-center shadow-sm">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-ink/40 mb-1">{s.label}</p>
-                    <p className="font-serif text-2xl italic tabular-nums" style={{ color: visual.accent }}>{s.value}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-5 h-1.5 rounded-full bg-ink/[0.06] overflow-hidden">
-                <div className="h-full rounded-full" style={{ width: '97%', background: visual.accent }} />
-              </div>
-              <p className="text-[11px] text-ink/45 mt-2 text-center">Delivery in progress · est. completion 47s</p>
+            <div className="mt-5 h-2 rounded-full bg-ink/[0.06] overflow-hidden">
+              <div className="h-full rounded-full" style={{ width: '97%', background: accent }} />
             </div>
-          )}
+          </>
+        )}
 
-          {/* CIO — Integrations */}
-          {visual.kind === 'security' && (
-            <div className="animate-fade-in">
-              <div className="space-y-2.5 mb-6">
-                {visual.integrations.map((int, i) => (
-                  <div key={i} className="flex items-center gap-3 p-3 rounded-xl border border-ink/[0.06] bg-white hover:border-palm/20 transition-colors">
-                    <div className="w-9 h-9 rounded-lg bg-palm/10 flex items-center justify-center shrink-0">
-                      <Database className="w-4 h-4 text-palm" />
-                    </div>
-                    <span className="flex-1 text-[13px] font-semibold text-ink/80">{int.name}</span>
-                    <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-palm">
-                      <CheckCircle2 className="w-3.5 h-3.5" /> {int.status}
-                    </span>
+        {/* CIO — integration status + certs */}
+        {visual.statusItems && (
+          <>
+            <div className="space-y-2.5 mb-6">
+              {visual.statusItems.map((item, i) => (
+                <div key={i} className="flex items-center gap-3 p-3 rounded-xl border border-ink/[0.07] bg-white">
+                  <div className="w-9 h-9 rounded-lg bg-palm/10 flex items-center justify-center shrink-0">
+                    <Database className="w-4 h-4 text-palm" />
                   </div>
-                ))}
-              </div>
-              <div className="flex flex-wrap gap-2 pt-4 border-t border-ink/[0.06]">
-                {visual.badges.map((badge, i) => (
-                  <span key={i} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-ink text-white text-[10px] font-bold uppercase tracking-wider">
-                    <ShieldCheck className="w-3 h-3" /> {badge}
+                  <span className="flex-1 text-[13px] font-semibold text-ink/80">{item.name}</span>
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-palm">
+                    <CheckCircle2 className="w-3.5 h-3.5" /> {item.status}
                   </span>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-          )}
-        </div>
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-ink/[0.07]">
+              {visual.certRow.map((badge, i) => (
+                <span key={i} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-ink text-white text-[10px] font-bold uppercase tracking-wide">
+                  <ShieldCheck className="w-3 h-3" /> {badge}
+                </span>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
 };
+
 
 
 // Hook for scroll animations
@@ -702,50 +734,103 @@ const ChatMockup = () => {
 
 
 const Hero = () => (
-  <Section className="pt-16 md:pt-24 pb-16 lg:pb-32 overflow-hidden relative">
-    {/* Background Grid */}
-    <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
-    
-    <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-8 items-center relative z-10">
-      <div className="reveal">
-        <Badge className="mb-6">The #1 Platform for Frontline Workers in Africa</Badge>
-        
-        <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-ink leading-[1.05] text-balance">
-          Africa's deskless workforce, <span className="font-serif italic font-normal text-coral">finally seen.</span>
-        </h1>
-        
-        <p className="mt-6 max-w-xl text-lg md:text-xl text-ink/65 leading-relaxed">
-          Jem turns WhatsApp into an enterprise-grade HR and financial-wellbeing platform for the people who keep your business running. <strong>No app to download, nothing to train.</strong>
-        </p>
-        
-        <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          <Button variant="primary" icon="arrow" className="text-base py-4 px-8">
-            Book an Executive Demo
-          </Button>
-          <Button variant="white" icon="play" className="text-base py-4 px-8">
-            See Product Tour
-          </Button>
-        </div>
-        
-        <div className="mt-12 flex items-center gap-6 pt-8 border-t border-ink/10">
-          <div className="flex -space-x-3">
-            {[1,2,3,4].map((i) => (
-              <div key={i} className={`w-10 h-10 rounded-full border-2 border-white bg-ink flex items-center justify-center shadow-sm z-[${10-i}]`}>
-                <span className="text-white text-[10px] font-bold">HR</span>
-              </div>
-            ))}
+  <section
+    id="hero"
+    className="relative overflow-hidden"
+    style={{ backgroundColor: '#051d2e' }}
+  >
+    {/* Subtle grid */}
+    <div className="absolute inset-0 bg-grid-pattern opacity-[0.06] pointer-events-none" />
+
+    {/* Single coral glow behind the phone */}
+    <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-coral/[0.06] blur-[140px] pointer-events-none" />
+
+    <div className="relative max-w-7xl mx-auto px-6 md:px-12">
+
+      {/* Main hero grid */}
+      <div className="grid lg:grid-cols-[1.05fr_1fr] gap-12 lg:gap-20 items-center pt-10 md:pt-14 pb-10 md:pb-14">
+
+        {/* LEFT — narrative */}
+        <div className="max-w-xl">
+          {/* Eyebrow */}
+          <div className="reveal inline-flex items-center gap-3 mb-7">
+            <span className="w-8 h-px bg-coral" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.25em] text-coral">
+              Enterprise platform · Africa
+            </span>
           </div>
-          <p className="text-sm font-medium text-ink/60 max-w-[200px] leading-snug">
-            Trusted by 200+ employers and <strong className="text-ink">250,000+ deskless workers</strong>.
+
+          {/* Headline */}
+          <h1 className="reveal font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-semibold tracking-[-0.03em] text-white leading-[1.04] text-balance">
+            The platform for{' '}
+            <span className="font-serif italic font-normal text-white/60">
+              the deskless workforce.
+            </span>
+          </h1>
+
+          {/* Sub */}
+          <p className="reveal mt-6 text-lg md:text-xl text-white/60 leading-[1.6] font-light">
+            Reach, engage, and reward every frontline worker — right inside WhatsApp. No app to download. Nothing to train.
           </p>
+
+          {/* Actions */}
+          <div className="reveal mt-10 flex flex-col sm:flex-row gap-3">
+            <Button variant="primary" icon="arrow" className="text-base py-4 px-8">
+              Book an executive demo
+            </Button>
+            <button className="group inline-flex items-center justify-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white/85 hover:text-white border border-white/20 hover:border-white/40 transition-colors">
+              <PlayCircle className="w-4 h-4" />
+              See the product tour
+            </button>
+          </div>
         </div>
+
+     {/* RIGHT — hero image */}
+<div className="reveal reveal-delay-2 flex justify-center lg:justify-end items-center">
+  <div className="relative w-full max-w-[640px] lg:max-w-none">
+    <img
+      src="/images/jemherogit.png"
+      alt="Jem platform — enterprise workforce management"
+      className="w-full h-auto block object-contain"
+         style={{
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%)',
+        maskImage: 'linear-gradient(to bottom, transparent 0%, #000 4%)',
+      }}
+      loading="eager"
+      draggable={false}
+    />
+  </div>
+</div>
       </div>
 
-      <div className="relative mt-10 lg:mt-0 flex justify-center lg:justify-end reveal reveal-delay-2">
-        <ChatMockup />
+      {/* Bottom strip — logo marquee, on the dark bg */}
+      <div className="reveal relative pt-12 md:pt-14 pb-20 md:pb-24 border-t border-white/[0.08]">
+
+        {/* Logo marquee, inline on the dark bg */}
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/35 mb-6">
+          Trusted by Africa's leading enterprises
+        </p>
+        <div className="relative overflow-hidden">
+          {/* Edge fades on navy */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #051d2e, rgba(5,29,46,0))' }} />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #051d2e, rgba(5,29,46,0))' }} />
+
+        <div className="flex animate-marquee items-center gap-16 md:gap-24">
+  {siteData.logos.map((logo, idx) => (
+    <img
+      key={idx}
+      src={logo.src}
+      alt={logo.name}
+      className="h-6 md:h-8 w-auto object-contain opacity-50 hover:opacity-90 transition-opacity duration-300 shrink-0 invert brightness-0"
+      loading="lazy"
+      draggable={false}
+    />
+  ))}
+</div>
+        </div>
       </div>
     </div>
-  </Section>
+  </section>
 );
 
 const LogoMarquee = () => (
@@ -771,24 +856,25 @@ const ExecReasons = () => {
   const visual = audienceVisuals[activeTab];
 
   return (
-    <Section className="bg-white relative scroll-mt-24" id="who-we-serve" bleed>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        {/* Section header */}
-        <div className="reveal max-w-3xl mb-14 md:mb-16 -mt-14">
-          <p className="text-[12px] font-bold uppercase tracking-[0.18em] mb-4" style={{ color: '#FF5A5F' }}>
+    <section className="bg-white relative scroll-mt-24 py-20 md:py-28" id="who-we-serve">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+
+        {/* Section header — tighter, blacker, more editorial */}
+        <div className="reveal max-w-3xl mb-14 md:mb-16">
+          <p className="text-[11px] font-bold uppercase tracking-[0.22em] mb-5 text-[#E05C4A]">
             Built for every executive
           </p>
-          <h2 className="font-sans text-4xl md:text-5xl lg:text-[56px] font-semibold text-[#0B0F19] tracking-[-0.02em] leading-[1.05] text-balance">
+          <h2 className="font-sans text-[40px] md:text-[52px] lg:text-[60px] font-semibold text-[#0A0A0A] tracking-[-0.03em] leading-[1.02] text-balance">
             Reasons for every executive to sign off.
           </h2>
-          <p className="mt-5 text-lg md:text-xl text-[#0B0F19]/60 leading-relaxed -mb-8 max-w-2xl">
+          <p className="mt-6 text-[17px] md:text-[19px] text-[#0A0A0A]/55 leading-[1.55] max-w-xl font-light">
             See the value Jem brings to your people and business through the seat you sit in.
           </p>
         </div>
 
-        {/* Tab strip — full-width underline style */}
-        <div className="reveal reveal-delay-1 mb-14 md:mb-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 md:gap-x-12">
+        {/* Tab strip — heavier weight, cleaner rhythm */}
+        <div className="reveal reveal-delay-1 mb-12 md:mb-14">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-10 md:gap-x-14">
             {siteData.execReasons.map((reason, i) => {
               const isActive = activeTab === i;
               const shortRole = reason.role.split(' / ')[0];
@@ -796,27 +882,25 @@ const ExecReasons = () => {
                 <button
                   key={reason.role}
                   onClick={() => setActiveTab(i)}
-                  className="group relative text-left pb-5"
+                  className="group relative text-left pb-4"
                 >
-                  {/* Underline track */}
-                  <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-ink/[0.08] rounded-full" />
-                  {/* Active underline */}
+                  <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#0A0A0A]/[0.08]" />
                   <span
-                    className={`absolute bottom-0 left-0 h-[3px] rounded-full transition-all duration-500 ease-out ${
+                    className={`absolute bottom-0 left-0 h-[2px] transition-all duration-500 ease-out ${
                       isActive ? 'w-full' : 'w-0 group-hover:w-1/3'
                     }`}
-                    style={{ background: '#FF5A5F' }}
+                    style={{ background: '#E05C4A' }}
                   />
                   <p
-                    className={`text-[15px] md:text-base font-bold tracking-tight transition-colors duration-300 ${
-                      isActive ? 'text-[#0B0F19]' : 'text-[#0B0F19]/40 group-hover:text-[#0B0F19]/70'
+                    className={`text-[16px] md:text-[17px] font-bold tracking-[-0.01em] transition-colors duration-300 ${
+                      isActive ? 'text-[#0A0A0A]' : 'text-[#0A0A0A]/35 group-hover:text-[#0A0A0A]/65'
                     }`}
                   >
                     For {shortRole}s
                   </p>
                   <p
-                    className={`mt-1 text-[13px] md:text-sm font-normal transition-colors duration-300 ${
-                      isActive ? 'text-[#0B0F19]/70' : 'text-[#0B0F19]/30 group-hover:text-[#0B0F19]/50'
+                    className={`mt-1.5 text-[13px] md:text-[14px] font-normal transition-colors duration-300 ${
+                      isActive ? 'text-[#0A0A0A]/60' : 'text-[#0A0A0A]/25 group-hover:text-[#0A0A0A]/45'
                     }`}
                   >
                     {reason.label}
@@ -827,98 +911,93 @@ const ExecReasons = () => {
           </div>
         </div>
 
-        {/* Content — split view: narrative on left, live preview on right */}
+        {/* Content panel — split view */}
         <div className="reveal reveal-delay-2">
-          <div className="relative rounded-2xl bg-white border border-ink/[0.07] overflow-hidden">
+          <div className="relative rounded-2xl bg-white border border-[#0A0A0A]/[0.08] overflow-hidden shadow-[0_1px_2px_rgba(10,10,10,0.03),0_24px_60px_-32px_rgba(10,10,10,0.10)]">
 
-            <div key={activeTab} className="relative grid lg:grid-cols-[1.05fr_1fr] gap-0 animate-fade-in" style={{ animationDuration: '450ms' }}>
-              {/* LEFT — Narrative */}
-              <div className="p-8 md:p-12 lg:p-14 flex flex-col justify-center">
-                <div className="inline-flex items-center gap-2 mb-5">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-ink text-white">
-                    {current.icon}
-                  </span>
-                  <div>
-                    <p className="text-[13px] font-bold text-ink leading-tight">{current.role}</p>
-                    <p className="text-[11px] font-semibold uppercase tracking-widest text-coral">{current.label}</p>
+            <div key={activeTab} className="relative animate-fade-in" style={{ animationDuration: '450ms' }}>
+              <div className="grid lg:grid-cols-[1fr_1fr] gap-0">
+
+                {/* LEFT — Narrative */}
+                <div className="p-9 md:p-14 lg:p-16 flex flex-col justify-center">
+                  <div className="inline-flex items-center gap-2.5 mb-6">
+                    <span className="flex items-center justify-center w-9 h-9 rounded-lg bg-[#0A0A0A] text-white">
+                      {current.icon}
+                    </span>
+                    <div>
+                      <p className="text-[13.5px] font-bold text-[#0A0A0A] leading-tight tracking-[-0.01em]">
+                        {current.role}
+                      </p>
+                      <p className="text-[10.5px] font-bold uppercase tracking-[0.16em] text-[#E05C4A] mt-0.5">
+                        {current.label}
+                      </p>
+                    </div>
+                  </div>
+
+                  <h3 className="font-sans text-[28px] md:text-[34px] font-semibold text-[#0A0A0A] leading-[1.15] tracking-[-0.02em] text-balance">
+                    {current.headline}
+                  </h3>
+                  <p className="mt-5 text-[15.5px] md:text-[16px] text-[#0A0A0A]/60 leading-[1.65] font-light">
+                    {current.body}
+                  </p>
+
+                  {/* Metric row — no card boxes, just hairline separators */}
+                  <div className="mt-10 grid grid-cols-3 gap-6 pt-8 border-t border-[#0A0A0A]/[0.08]">
+                    {current.metrics.map((metric, idx) => (
+                      <div key={idx}>
+                        <p className="font-sans text-[26px] md:text-[30px] font-semibold text-[#0A0A0A] leading-none tracking-[-0.02em] tabular-nums">
+                          {metric.value}
+                        </p>
+                        <p className="mt-2.5 text-[10.5px] font-semibold uppercase tracking-[0.12em] text-[#0A0A0A]/45 leading-tight">
+                          {metric.label}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <h3 className="font-sans text-2xl md:text-3xl font-semibold text-ink leading-tight text-balance">
-                  {current.headline}
-                </h3>
-                <p className="mt-5 text-[15px] md:text-base text-ink/65 leading-relaxed">
-                  {current.body}
-                </p>
-
-                {/* Metric cards — a row of three, enterprise style */}
-                <div className="mt-8 grid grid-cols-3 gap-3">
-                  {current.metrics.map((metric, idx) => (
-                    <div
-                      key={idx}
-                      className="rounded-xl border border-ink/[0.06] bg-white p-4 shadow-[0_1px_2px_rgba(0,0,0,0.02)]"
-                    >
-                      <p className="font-serif text-2xl md:text-[28px] italic text-ink leading-none mb-2 tabular-nums">
-                        {metric.value}
-                      </p>
-                      <p className="text-[10px] font-bold uppercase tracking-wider text-ink/45 leading-tight">
-                        {metric.label}
+                {/* RIGHT — Live product preview */}
+                <div className="relative p-9 md:p-14 lg:p-16 flex items-center bg-[#FAFAF9] border-t lg:border-t-0 lg:border-l border-[#0A0A0A]/[0.08]">
+                  <div className="w-full">
+                    <div className="flex items-center gap-2 mb-6">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E05C4A]" />
+                      <p className="text-[10.5px] font-bold uppercase tracking-[0.18em] text-[#0A0A0A]/50">
+                        See it in action
                       </p>
                     </div>
-                  ))}
-                </div>
-
-                {/* Testimonials — real voices, per exec seat */}
-                <div className="mt-10 pt-8 border-t border-ink/[0.08]">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-ink/40 mb-6">
-                    In their words
-                  </p>
-
-                  <div className="space-y-7">
-                    {current.testimonials.map((t, idx) => (
-                      <figure key={idx} className="relative pl-5 border-l border-ink/[0.10]">
-                        <blockquote className="font-serif italic text-[15px] md:text-[16px] text-ink/85 leading-[1.55] mb-3 text-balance">
-                          "{t.quote}"
-                        </blockquote>
-                        <figcaption className="flex items-center gap-3">
-                          <span className="w-6 h-px bg-ink/25" />
-                          <div>
-                            <p className="text-[12.5px] font-semibold text-ink leading-tight">
-                              {t.name}
-                            </p>
-                            <p className="text-[11px] text-ink/50 leading-tight mt-0.5">
-                              {t.role}
-                            </p>
-                          </div>
-                        </figcaption>
-                      </figure>
-                    ))}
+                    <AudiencePreview visual={visual} />
                   </div>
                 </div>
               </div>
 
-              {/* RIGHT — Live product preview */}
-              <div className="relative p-8 md:p-12 lg:p-14 flex items-center bg-white border-t lg:border-t-0 lg:border-l border-ink/[0.07]">
-                <div className="w-full">
-                  <div className="flex items-center gap-2 mb-5">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-coral opacity-60" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-coral" />
+              {/* Testimonial strip — refined, quiet, enterprise */}
+              <div className="border-t border-[#0A0A0A]/[0.08] bg-white">
+                {current.testimonials.map((t, idx) => (
+                  <figure
+                    key={idx}
+                    className="grid md:grid-cols-[140px_1fr_auto] gap-6 md:gap-10 items-start px-9 md:px-14 lg:px-16 py-9 md:py-11"
+                  >
+                    <span className="text-[10.5px] font-bold uppercase tracking-[0.18em] text-[#0A0A0A]/40 pt-1">
+                      In their words
                     </span>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-ink/50">
-                      See it in action
-                    </p>
-                  </div>
-                  <AudiencePreview visual={visual} />
-                </div>
+                    <blockquote className="text-[16px] md:text-[17px] text-[#0A0A0A]/80 leading-[1.55] font-light text-balance">
+                      "{t.quote}"
+                    </blockquote>
+                    <figcaption className="shrink-0 flex flex-col md:items-end text-[12.5px] whitespace-nowrap md:pt-1">
+                      <span className="font-semibold tracking-[-0.01em] text-[#0A0A0A]">{t.name}</span>
+                      <span className="text-[#0A0A0A]/45 mt-1">{t.role}</span>
+                    </figcaption>
+                  </figure>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 };
+
 
 
 const PillarVisual = ({ type, color }) => {
@@ -1485,7 +1564,6 @@ export default function App() {
  
         <main className="flex-grow">
           <Hero />
-          <LogoMarquee />
           <ExecReasons />
           <PillarsSection />
           <IntegrationSteps />
