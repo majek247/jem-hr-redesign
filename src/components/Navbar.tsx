@@ -100,10 +100,12 @@ export default function Navbar() {
 
           {/* Desktop CTA — quiet outline, coral on hover */}
           <div className="hidden lg:block">
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-coral/60 px-5 py-2.5 text-[0.875rem] font-semibold tracking-[-0.01em] text-white/85 hover:text-coral transition-colors duration-300"
-            >
+           <a
+  href="https://www.jemhr.com/contact/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-coral/60 px-5 py-2.5 text-[0.875rem] font-semibold tracking-[-0.01em] text-white/85 hover:text-coral transition-colors duration-300"
+>
               Book a demo
               <svg
                 width="14"
