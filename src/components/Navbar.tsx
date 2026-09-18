@@ -27,11 +27,11 @@ export default function Navbar() {
           const el = document.getElementById(id)
           return el ? { id, top: el.getBoundingClientRect().top } : null
         })
-        .filter(Boolean)
+        .filter((s): s is { id: string; top: number } => s !== null)
 
       // Find the last section whose top has crossed 30% of viewport height
       const threshold = window.innerHeight * 0.3
-      let current = null
+      let current: { id: string; top: number } | null = null
       for (const s of sections) {
         if (s.top <= threshold) current = s
       }
